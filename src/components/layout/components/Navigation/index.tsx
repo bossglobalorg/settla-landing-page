@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <header
       className={cn(
-        "full-width content-grid fixed min-h-[5.125rem] w-full",
+        "full-width content-grid fixed z-50 min-h-[5.125rem] w-full",
         opaque ? "bg-white" : "bg-primary-900",
       )}
     >
