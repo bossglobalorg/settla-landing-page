@@ -71,7 +71,7 @@ const Navigation = () => {
 
       {/* MOBILE NAVIGATION */}
       {openMenu && (
-        <nav className="full-width bg-primary-900/70 absolute top-full z-20 min-h-[calc(100dch-5.125rem)] w-full space-y-10 rounded-b-2xl pb-20 pt-10 backdrop-blur-md lg:hidden">
+        <nav className="full-width bg-primary-900/70 absolute top-full z-20 min-h-[calc(100dch-5.125rem)] w-full space-y-10 rounded-bl-3xl pb-20 pt-10 backdrop-blur-md lg:hidden">
           <ul className="flex flex-col items-center justify-between gap-8">
             {navlinks.map(({ label, link }) => (
               <li
