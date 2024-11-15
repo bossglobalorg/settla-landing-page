@@ -15,7 +15,6 @@ import {
 export default function Home() {
   return (
     <PageLayout>
-      <p>Hello World!</p>
       <HeroSection />
       <FeaturedSection />
       <WhyChooseSection />

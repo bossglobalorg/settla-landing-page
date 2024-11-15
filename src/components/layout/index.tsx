@@ -8,11 +8,11 @@ interface PageLayoutProps extends ChildrenProp {
 
 const PageLayout: React.FC<PageLayoutProps> = ({ children, className }) => {
   return (
-    <div
-      className={cn("content-grid min-h-dvh place-content-start", className)}
-    >
+    <div className={cn("", className)}>
       <Navigation />
-      <main className="min-h-[calc(100dvh-4rem)] mt-[5.125rem]">{children}</main>
+      <main className="mt-[5.125rem] min-h-[calc(100dvh-4rem)]">
+        {children}
+      </main>
       <Footer />
     </div>
   );

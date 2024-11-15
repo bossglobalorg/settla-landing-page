@@ -1,6 +1,9 @@
 import { SvgProps } from "@/types/svgs";
 
-const SettlaLogoSVG: React.FC<SvgProps> = ({ className }) => {
+const SettlaLogoSVG: React.FC<SvgProps> = ({
+  className,
+  fillColor = "white",
+}) => {
   return (
     <svg
       width="25"
@@ -21,14 +24,14 @@ const SettlaLogoSVG: React.FC<SvgProps> = ({ className }) => {
           fillRule="evenodd"
           clipRule="evenodd"
           d="M17.6526 3.48306C17.3538 3.65449 17.3768 4.09284 17.6918 4.23208L20.5176 5.48087C20.5177 5.48089 20.5177 5.48098 20.5176 5.48101C20.5176 5.48104 20.5176 5.48113 20.5176 5.48116C21.6829 6.03141 22.683 6.63447 23.5159 7.28801C23.8058 7.5155 24.2545 7.31666 24.2545 6.94817V0.420943C24.2545 0.0978854 23.9052 -0.104403 23.625 0.0563691L17.6526 3.48306Z"
-          fill="white"
+          fill={fillColor}
         />
         <path
           id="Subtract_2"
           fillRule="evenodd"
           clipRule="evenodd"
           d="M0 18.8426C0 18.4528 0.502706 18.2572 0.791217 18.5194C1.72744 19.3702 2.92717 20.1426 4.38604 20.8323L6.53677 21.7827C6.85186 21.9219 6.87485 22.3603 6.57605 22.5317L0.629496 25.9436C0.349284 26.1044 0 25.9021 0 25.579V18.8426Z"
-          fill="white"
+          fill={fillColor}
         />
       </g>
     </svg>
