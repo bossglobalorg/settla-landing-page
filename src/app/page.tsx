@@ -1,7 +1,9 @@
+import { PageLayout } from "@/components";
+
 export default function Home() {
   return (
-    <div>
-      <main>Hello World!</main>
-    </div>
+    <PageLayout>
+      Hello World!
+    </PageLayout>
   );
 }
