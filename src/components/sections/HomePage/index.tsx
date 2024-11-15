@@ -1,0 +1,10 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as FeaturedSection } from "./FeaturedSection";
+export { default as WhyChooseSection } from "./WhyChooseSection";
+export { default as CurrencySection } from "./CurrencySection";
+export { default as TestimonialSection } from "./TestimonialSection";
+export { default as GetStartedSection } from "./GetStartedSection";
+export { default as RegisterNowSection } from "./RegisterNowSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as RealTimeUpdateSection } from "./RealTimeUpdateSection";
+export { default as CtaSection } from "./CtaSection";
