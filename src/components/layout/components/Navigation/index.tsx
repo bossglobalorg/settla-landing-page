@@ -14,7 +14,7 @@ const Navigation = () => {
     <header
       className={cn(
         "full-width content-grid fixed min-h-[5.125rem] w-full",
-        opaque && "bg-white",
+        opaque ? "bg-white" : "bg-primary-900",
       )}
     >
       <nav className="flex items-center justify-between">
