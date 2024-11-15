@@ -13,8 +13,8 @@ const Navigation = () => {
         </ul>
 
         <div className="space-x-3">
-          <ButtonLink>Login </ButtonLink>
-          <ButtonLink>Get Started </ButtonLink>
+          <ButtonLink variant="primary-outline">Login</ButtonLink>
+          <ButtonLink>Get Started</ButtonLink>
         </div>
       </nav>
     </header>
