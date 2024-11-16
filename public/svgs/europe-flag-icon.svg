@@ -1,0 +1,33 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="EU 1" clip-path="url(#clip0_729_10277)">
+<g id="Clip path group">
+<mask id="mask0_729_10277" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="56" height="56">
+<g id="clip0_436_828">
+<path id="Vector" d="M56 0H0V56H56V0Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_729_10277)">
+<g id="Group">
+<path id="Vector_2" d="M28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z" fill="#231D9A"/>
+<path id="Vector_3" d="M30.7834 9.78481L27.9991 7.00055L25.2148 9.78481L27.9991 12.5691L30.7834 9.78481Z" fill="#FFD400"/>
+<path id="Vector_4" d="M21.4982 11.875L18.7139 9.09064L15.9297 11.875L18.7139 14.6592L21.4982 11.875Z" fill="#FFD400"/>
+<path id="Vector_5" d="M14.6583 18.7143L11.8741 15.9301L9.08984 18.7143L11.8741 21.4986L14.6583 18.7143Z" fill="#FFD400"/>
+<path id="Vector_6" d="M12.5685 28.0003L9.78428 25.2161L7 28.0003L9.78428 30.7847L12.5685 28.0003Z" fill="#FFD400"/>
+<path id="Vector_7" d="M14.678 37.3201L11.8937 34.5358L9.10938 37.3201L11.8937 40.1043L14.678 37.3201Z" fill="#FFD400"/>
+<path id="Vector_8" d="M21.467 44.103L18.6827 41.3187L15.8984 44.103L18.6827 46.8872L21.467 44.103Z" fill="#FFD400"/>
+<path id="Vector_9" d="M37.4093 46.8874L34.625 44.1031L37.4093 41.3188L40.1936 44.1031L37.4093 46.8874Z" fill="#FFD400"/>
+<path id="Vector_10" d="M30.7834 46.2158L27.9991 43.4316L25.2148 46.2158L27.9991 49.0001L30.7834 46.2158Z" fill="#FFD400"/>
+<path id="Vector_11" d="M46.9045 37.2872L44.1203 34.5029L41.3359 37.2872L44.1203 40.0714L46.9045 37.2872Z" fill="#FFD400"/>
+<path id="Vector_12" d="M48.9982 28.0001L46.2139 25.2158L43.4297 28.0001L46.2139 30.7844L48.9982 28.0001Z" fill="#FFD400"/>
+<path id="Vector_13" d="M46.8888 18.6852L44.1046 15.9009L41.3203 18.6852L44.1046 21.4695L46.8888 18.6852Z" fill="#FFD400"/>
+<path id="Vector_14" d="M40.1076 11.8948L37.3233 9.1106L34.5391 11.8948L37.3233 14.6792L40.1076 11.8948Z" fill="#FFD400"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_729_10277">
+<rect width="56" height="56" fill="white"/>
+</clipPath>
+</defs>
+</svg>
