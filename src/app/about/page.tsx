@@ -1,6 +1,8 @@
 import { PageLayout } from "@/components";
 import {
   BannerSection,
+  CommitmentSection,
+  IndustriesSection,
   WhySettlaSection,
 } from "@/components/sections/AboutPage";
 
@@ -9,6 +11,8 @@ const About = () => {
     <PageLayout>
       <BannerSection />
       <WhySettlaSection />
+      <CommitmentSection />
+      <IndustriesSection />
     </PageLayout>
   );
 };
