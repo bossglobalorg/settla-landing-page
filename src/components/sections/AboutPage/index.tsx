@@ -1,1 +1,3 @@
-// add export default of sections of about page
+export { default as BannerSection } from "./BannerSection";
+export { default as WhySettlaSection } from "./WhySettlaSection";
+
