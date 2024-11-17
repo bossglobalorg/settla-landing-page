@@ -47,7 +47,7 @@ const GetStartedAccordion: React.FC<GetStartedAccordionProps> = ({
   };
 
   return (
-    <div className={cn("", className)}>
+    <div className={cn("space-y-3 md:space-y-4", className)}>
       {items.map((item, index) => (
         <GetStartedAccordionItem
           key={index}

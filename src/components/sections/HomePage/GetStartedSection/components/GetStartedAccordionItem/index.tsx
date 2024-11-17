@@ -19,15 +19,15 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   content,
 }) => (
   <div
-    className={`mb-4 rounded-xl transition-colors duration-200 ${
+    className={`rounded-xl transition-colors duration-200 ${
       isOpen ? "bg-gray-50" : "bg-white"
     }`}
   >
     <motion.button
       onClick={onToggle}
       className={cn(
-        "flex w-full items-center gap-4 px-6",
-        isOpen ? "pb-3 pt-6" : "py-3",
+        "flex w-full items-center gap-4 px-4 md:px-6",
+        isOpen ? "pb-2 pt-4 md:pb-3 md:pt-6" : "py-3",
       )}
       whileTap={{ scale: 0.99 }}
     >
@@ -41,7 +41,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       >
         {number}
       </div>
-      <span className="flex-grow text-left font-medium leading-7">{title}</span>
+      <span className="flex-grow text-left font-medium leading-7 text-primary-900 md:text-lg">
+        {title}
+      </span>
 
       <motion.div
         animate={{ rotate: isOpen ? 180 : 0 }}
@@ -60,7 +62,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           transition={{ duration: 0.3 }}
           className="overflow-hidden"
         >
-          <p className="pb-6 pl-20 pr-16 leading-6 text-gray-600">{content}</p>
+          <p className="pb-4 pl-[4.5rem] pr-12 leading-6 text-gray-600 md:pb-6 md:pl-20 md:pr-16">
+            {content}
+          </p>
         </motion.div>
       )}
     </AnimatePresence>
