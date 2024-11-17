@@ -1,6 +1,5 @@
 import { PageLayout } from "@/components";
 import {
-  CtaSection,
   CurrencySection,
   FaqSection,
   FeaturedSection,
@@ -24,7 +23,6 @@ export default function Home() {
       <RegisterNowSection />
       <FaqSection />
       <RealTimeUpdateSection />
-      <CtaSection />
     </PageLayout>
   );
 }

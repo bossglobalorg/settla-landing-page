@@ -2,7 +2,7 @@ import ButtonLink from "@/components/ui/ButtonLink";
 
 const CtaSection = () => {
   return (
-    <section className="content-grid rounded-b-[0.9375rem] bg-primary-900 py-[3.75rem] text-white md:py-24">
+    <section className="content-grid rounded-b-[0.9375rem] bg-primary-900 py-[3.75rem] text-white md:rounded-b-[2rem] md:py-24">
       <div className="mx-auto flex w-full max-w-80 flex-col items-center justify-center gap-6 text-center sm:max-w-3xl">
         <p className="text-base font-medium leading-5 text-accent-400 underline decoration-primary-400 decoration-2 underline-offset-4 md:mb-5 md:text-lg md:leading-7">
           Ready to get started?
