@@ -1,0 +1,57 @@
+<svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="US 2" clip-path="url(#clip0_729_10183)">
+<g id="Clip path group">
+<mask id="mask0_729_10183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="29">
+<g id="clip0_197_6941">
+<path id="Vector" d="M28 14.5C28 6.76801 21.732 0.5 14 0.5C6.26801 0.5 0 6.76801 0 14.5C0 22.232 6.26801 28.5 14 28.5C21.732 28.5 28 22.232 28 14.5Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_729_10183)">
+<g id="Group">
+<path id="Vector_2" d="M28 14.5C28 6.76801 21.732 0.5 14 0.5C6.26801 0.5 0 6.76801 0 14.5C0 22.232 6.26801 28.5 14 28.5C21.732 28.5 28 22.232 28 14.5Z" fill="white"/>
+<g id="Clip path group_2">
+<mask id="mask1_729_10183" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="29">
+<g id="mask0_197_6941">
+<path id="Vector_3" d="M14 28.5C21.732 28.5 28 22.232 28 14.5C28 6.76801 21.732 0.5 14 0.5C6.26801 0.5 0 6.76801 0 14.5C0 22.232 6.26801 28.5 14 28.5Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask1_729_10183)">
+<g id="Group_2">
+<path id="Vector_4" d="M0 0.499939H28V28.4999H0V0.499939Z" fill="white"/>
+<path id="Vector_5" d="M14 0.499939H0V15.5893H14V0.499939Z" fill="#231D9A"/>
+<path id="Vector_6" d="M9.0442 4.19835L10.0977 3.1449L9.0442 2.09144L7.99075 3.1449L9.0442 4.19835Z" fill="white"/>
+<path id="Vector_7" d="M9.0442 8.45916L10.0977 7.4057L9.0442 6.35225L7.99075 7.4057L9.0442 8.45916Z" fill="white"/>
+<path id="Vector_8" d="M9.0442 12.7197L10.0977 11.6662L9.0442 10.6127L7.99075 11.6662L9.0442 12.7197Z" fill="white"/>
+<path id="Vector_9" d="M3.42311 4.19835L4.47656 3.1449L3.42311 2.09144L2.36965 3.1449L3.42311 4.19835Z" fill="white"/>
+<path id="Vector_10" d="M3.42311 8.45916L4.47656 7.4057L3.42311 6.35225L2.36965 7.4057L3.42311 8.45916Z" fill="white"/>
+<path id="Vector_11" d="M3.42311 12.7197L4.47656 11.6662L3.42311 10.6127L2.36965 11.6662L3.42311 12.7197Z" fill="white"/>
+<path id="Vector_12" d="M11.8528 6.3286L12.9062 5.27515L11.8528 4.22169L10.7993 5.27515L11.8528 6.3286Z" fill="white"/>
+<path id="Vector_13" d="M11.8528 2.06841L12.9062 1.01495L11.8528 -0.038501L10.7993 1.01495L11.8528 2.06841Z" fill="white"/>
+<path id="Vector_14" d="M11.8528 10.5891L12.9062 9.53564L11.8528 8.48219L10.7993 9.53564L11.8528 10.5891Z" fill="white"/>
+<path id="Vector_15" d="M11.8528 14.8499L12.9062 13.7964L11.8528 12.743L10.7993 13.7964L11.8528 14.8499Z" fill="white"/>
+<path id="Vector_16" d="M6.23561 6.3286L7.28906 5.27515L6.23561 4.22169L5.18215 5.27515L6.23561 6.3286Z" fill="white"/>
+<path id="Vector_17" d="M6.23561 10.5891L7.28906 9.53564L6.23561 8.48219L5.18215 9.53564L6.23561 10.5891Z" fill="white"/>
+<path id="Vector_18" d="M6.23561 14.8499L7.28906 13.7964L6.23561 12.743L5.18215 13.7964L6.23561 14.8499Z" fill="white"/>
+<path id="Vector_19" d="M0.614514 6.3286L1.66797 5.27515L0.614514 4.22169L-0.43894 5.27515L0.614514 6.3286Z" fill="white"/>
+<path id="Vector_20" d="M0.614514 10.5891L1.66797 9.53564L0.614514 8.48219L-0.438941 9.53564L0.614514 10.5891Z" fill="white"/>
+<path id="Vector_21" d="M0.614514 14.8499L1.66797 13.7964L0.614514 12.743L-0.43894 13.7964L0.614514 14.8499Z" fill="white"/>
+<path id="Vector_22" d="M34.6713 0.356384H14V2.53231H34.6713V0.356384Z" fill="#F0263C"/>
+<path id="Vector_23" d="M29.2315 4.70831H14V6.88424H29.2315V4.70831Z" fill="#F0263C"/>
+<path id="Vector_24" d="M29.2315 9.06H14V11.2359H29.2315V9.06Z" fill="#F0263C"/>
+<path id="Vector_25" d="M34.6713 13.4119H14V15.5878H34.6713V13.4119Z" fill="#F0263C"/>
+<path id="Vector_26" d="M34.5638 17.7639H0.292969V19.9398H34.5638V17.7639Z" fill="#F0263C"/>
+<path id="Vector_27" d="M34.5638 22.1155H0.292969V24.2914H34.5638V22.1155Z" fill="#F0263C"/>
+<path id="Vector_28" d="M34.5638 26.4677H0.292969V28.6436H34.5638V26.4677Z" fill="#F0263C"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_729_10183">
+<rect width="28" height="28" fill="white" transform="translate(0 0.5)"/>
+</clipPath>
+</defs>
+</svg>

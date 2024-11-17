@@ -1,0 +1,30 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="UK 1" clip-path="url(#clip0_729_10307)">
+<g id="Clip path group">
+<mask id="mask0_729_10307" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="56" height="56">
+<g id="mask0_199_9010">
+<path id="Vector" d="M28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_729_10307)">
+<g id="Group">
+<path id="Vector_2" d="M56 0H0V56H56V0Z" fill="#231D9A"/>
+<path id="Vector_3" d="M23.625 23.625V-0.875H21V17.9375L2.1875 5.25L-3.5 12.6875L9.1875 21H-2.1875V23.625H23.625Z" fill="white"/>
+<path id="Vector_4" d="M23.625 32.375V56.875H21V38.0625L2.1875 50.75L-3.5 43.3125L9.1875 35H-2.1875V32.375H23.625Z" fill="white"/>
+<path id="Vector_5" d="M32.375 23.625V-0.875H35V17.9375L53.8125 5.25L59.5 12.6875L46.8125 21H58.1875V23.625H32.375Z" fill="white"/>
+<path id="Vector_6" d="M32.375 32.375V56.875H35V38.0625L53.8125 50.75L59.5 43.3125L46.8125 35H58.1875V32.375H32.375Z" fill="white"/>
+<path id="Vector_7" d="M21 21V20.5625L2.625 8.3125L-0.4375 11.8125L13.125 21H21Z" fill="#F0263C"/>
+<path id="Vector_8" d="M21 35V35.4375L2.625 47.6875L-0.4375 44.1875L13.125 35H21Z" fill="#F0263C"/>
+<path id="Vector_9" d="M35 21V20.5625L53.375 8.3125L56.4375 11.8125L42.875 21H35Z" fill="#F0263C"/>
+<path id="Vector_10" d="M35 35V35.4375L53.375 47.6875L56.4375 44.1875L42.875 35H35Z" fill="#F0263C"/>
+<path id="Vector_11" fill-rule="evenodd" clip-rule="evenodd" d="M32.375 23.625V-1.75H23.625V23.625H-1.75V32.375H23.625V57.75H32.375V32.375H57.75V23.625H32.375Z" fill="#F0263C"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_729_10307">
+<rect width="56" height="56" fill="white"/>
+</clipPath>
+</defs>
+</svg>
