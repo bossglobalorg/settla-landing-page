@@ -12,6 +12,7 @@ const assetLib = {
   manufacturingImage: "/imgs/manufacturing.png",
   realEstateImage: "/imgs/realestate.png",
   travelImage: "/imgs/travel.png",
+  discoveryImage: "/imgs/discovery.png",
 };
 
 export default assetLib;
