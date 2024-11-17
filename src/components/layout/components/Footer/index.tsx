@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="content-grid bg-gray-50 pb-16 pt-32">
+    <footer className="content-grid bg-gray-50 py-[3.75rem] md:pb-16 md:pt-32">
       <div>
         <div className="flex items-start justify-between gap-[3.75rem] max-md:flex-col md:gap-16">
           <div className="flex items-center justify-start gap-4 rounded">

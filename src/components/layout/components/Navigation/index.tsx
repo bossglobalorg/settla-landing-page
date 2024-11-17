@@ -21,7 +21,9 @@ const Navigation = () => {
     <header
       className={cn(
         "full-width content-grid fixed top-0 z-50 min-h-[5.125rem] w-full",
-        opaque ? "bg-white" : "bg-primary-900",
+        opaque
+          ? "bg-gray-25 border-b border-gray-200 md:bg-white"
+          : "bg-primary-900",
       )}
     >
       <nav className="flex items-center justify-between">
@@ -66,7 +68,7 @@ const Navigation = () => {
           onClick={() => setOpenMenu((prev) => !prev)}
           className="rounded-lg border border-[#A8D246] p-2 shadow-sm lg:hidden"
         >
-          <MenuBarSVG />
+          <MenuBarSVG strokeColor={opaque ? "#00332C" : "white"} />
         </button>
       </nav>
 
