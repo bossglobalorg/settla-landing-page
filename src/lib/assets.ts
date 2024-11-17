@@ -25,12 +25,20 @@ const assetLib = {
 
   // ICON SVGS
   checkIcon: "/svgs/check-icon.svg",
+
   usFlagIcon: "/svgs/us-flag-icon.svg",
   ukFlagIcon: "/svgs/uk-flag-icon.svg",
   saFlagIcon: "/svgs/sa-flag-icon.svg",
   canadaFlagIcon: "/svgs/canada-flag-icon.svg",
   europeFlagIcon: "/svgs/europe-flag-icon.svg",
   nigeriaFlagIcon: "/svgs/nigeria-flag-icon.svg",
+
+  topic1Icon: "/svgs/topic-icon-1.svg",
+  topic2Icon: "/svgs/topic-icon-2.svg",
+  topic3Icon: "/svgs/topic-icon-3.svg",
+  topic4Icon: "/svgs/topic-icon-4.svg",
+  topic5Icon: "/svgs/topic-icon-5.svg",
+  topic6Icon: "/svgs/topic-icon-6.svg",
 
   // LOGO SVGS
   techcabalLogo: "/svgs/techcabal-logo.svg",
