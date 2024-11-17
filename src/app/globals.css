@@ -50,4 +50,13 @@ body {
   .content-grid > .full-width {
     grid-column: full-width;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
 }
