@@ -1,6 +1,9 @@
 const assetLib = {
   // IMAGES
   homePageHeroImage: "/imgs/settla-homepage-hero-image.png",
+  testimonialImage1: "/imgs/testimonial-image-1.png",
+  testimonialImage2: "/imgs/testimonial-image-2.png",
+  testimonialImage3: "/imgs/testimonial-image-3.png",
 
   // ICON SVGS
   checkIcon: "/svgs/check-icon.svg",
