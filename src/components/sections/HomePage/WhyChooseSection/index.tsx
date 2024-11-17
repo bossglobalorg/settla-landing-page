@@ -15,7 +15,7 @@ const WhyChooseSection = () => {
             Quick, Reliable, and Secure.
           </h2>
 
-          <p className="mb-4 text-xl leading-7 tracking-[-0.03125rem] text-gray-600 max-lg:max-w-[16.6875rem] md:mb-10">
+          <p className="mb-4 text-xl leading-7 tracking-[-0.03125rem] text-gray-600 max-lg:max-w-md max-sm:max-w-[16.6875rem] md:mb-10">
             Fast, flexible and secure international money transfers across the
             world.
           </p>
@@ -28,9 +28,9 @@ const WhyChooseSection = () => {
           </ButtonLink>
         </header>
 
-        <div className="flex w-full flex-wrap items-start justify-between gap-8">
+        <div className="flex w-full flex-wrap items-start justify-center gap-8 lg:justify-between">
           {features.map(({ icon, title, text }, index) => (
-            <article key={index} className="w-full md:max-w-[17.125rem]">
+            <article key={index} className="w-full sm:max-w-[17.125rem]">
               <figure className="relative size-[3.75rem] rounded-full bg-primary-400 md:size-20">
                 <Image src={icon} alt={`feature ${index + 1}`} fill />
               </figure>

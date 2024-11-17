@@ -13,9 +13,9 @@ const Footer = () => {
       <div>
         <div className="flex items-start justify-between gap-[3.75rem] max-md:flex-col md:gap-16">
           <div className="flex items-center justify-start gap-4 rounded">
-            <SettlaLogoSVG className="max-lg:w-[18px]" fillColor={"#004E43"} />
+            <SettlaLogoSVG className="max-sm:w-[18px]" fillColor={"#004E43"} />
             <SettlaWordMarkSVG
-              className="max-lg:w-[68px]"
+              className="max-sm:w-[68px]"
               fillColor={"#004E43"}
             />
           </div>
