@@ -13,7 +13,8 @@ import { useState } from "react";
 
 const Navigation = () => {
   const pathname = usePathname();
-  const opaque = pathname === "/about" || "faq";
+  const opaque = ["/about", "/faq"].includes(pathname);
+
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
