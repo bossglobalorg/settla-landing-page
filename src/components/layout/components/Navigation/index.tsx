@@ -27,7 +27,7 @@ const Navigation = () => {
       )}
     >
       <nav className="flex items-center justify-between">
-        <div className="flex items-center justify-start gap-4 rounded">
+        <Link href="/" className="flex items-center justify-start gap-4 rounded">
           <SettlaLogoSVG
             className="max-lg:w-[18px]"
             fillColor={opaque ? "#004E43" : "white"}
@@ -36,7 +36,7 @@ const Navigation = () => {
             className="max-lg:w-[68px]"
             fillColor={opaque ? "#004E43" : "white"}
           />
-        </div>
+        </Link>
 
         <ul className="flex items-center justify-between gap-10 max-lg:hidden">
           {navlinks.map(({ label, link }) => (
@@ -114,7 +114,7 @@ const navlinks = [
   },
   {
     label: "about us",
-    link: "",
+    link: "/about",
   },
   {
     label: "help center",
@@ -122,6 +122,6 @@ const navlinks = [
   },
   {
     label: "contact us",
-    link: "",
+    link: "/contact-us",
   },
 ];
