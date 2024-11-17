@@ -2,14 +2,49 @@ import Image from "next/image";
 import assetLib from "@/lib/assets";
 import { ChevronDownSVG } from "@/components/svgs";
 import { ButtonLink } from "@/components";
+interface CurrencyCardProps {
+  flag: string;
+  symbol: string;
+  currency: string;
+  exchangeRate: number;
+}
 
-const list = [
-  "One account, multiple currencies",
-  "Regulated & secure",
-  "1 business day for bank withdrawals",
-];
+const CurrencyCard: React.FC<CurrencyCardProps> = ({
+  flag,
+  symbol,
+  currency,
+  exchangeRate,
+}) => {
+  return (
+    <div
+      key={symbol}
+      className="flex w-full max-w-[32rem] items-center justify-start gap-5 rounded-2xl bg-white px-4 py-5 text-gray-600 sm:px-6 sm:py-7"
+    >
+      <figure className="relative size-8 overflow-hidden rounded-full bg-gray-50 sm:size-14">
+        <Image src={flag} alt={currency} fill />
+      </figure>
+
+      <div>
+        <p className="text-base font-medium leading-8 text-primary-900 sm:text-xl md:text-2xl">
+          {symbol}
+        </p>
+        <p className="max-md:text-sm">{currency}</p>
+      </div>
+
+      <p className="ml-auto max-sm:text-sm">
+        {exchangeRate} {symbol}
+      </p>
+    </div>
+  );
+};
 
 const CurrencySection = () => {
+  const list = [
+    "One account, multiple currencies",
+    "Regulated & secure",
+    "1 business day for bank withdrawals",
+  ];
+
   return (
     <section className="content-grid py-[3.75rem] md:py-32">
       <div className="flex items-center justify-between gap-20 max-lg:flex-col">
@@ -61,26 +96,8 @@ const CurrencySection = () => {
         </div>
 
         <div className="flex w-full max-w-[40rem] flex-col items-center justify-center gap-4 rounded-2xl bg-gray-50 p-4 sm:p-6 md:gap-6 md:p-10 lg:rounded-[4rem] lg:p-16">
-          {currencies.map(({ flag, symbol, currency, exchangeRate }) => (
-            <div
-              key={symbol}
-              className="flex w-full max-w-[32rem] items-center justify-start gap-5 rounded-2xl bg-white px-4 py-5 text-gray-600 sm:px-6 sm:py-7"
-            >
-              <figure className="relative size-8 overflow-hidden rounded-full bg-gray-50 sm:size-14">
-                <Image src={flag} alt={currency} fill />
-              </figure>
-
-              <div>
-                <p className="text-base font-medium leading-8 text-primary-900 sm:text-xl md:text-2xl">
-                  {symbol}
-                </p>
-                <p className="max-md:text-sm">{currency}</p>
-              </div>
-
-              <p className="ml-auto max-sm:text-sm">
-                {exchangeRate} {symbol}
-              </p>
-            </div>
+          {currencies.map((currency) => (
+            <CurrencyCard key={currency.symbol} {...currency} />
           ))}
         </div>
       </div>

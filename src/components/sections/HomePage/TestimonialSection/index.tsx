@@ -58,7 +58,7 @@ const TestimonialSection = () => {
             Customer stories
           </p>
 
-          <h2 className="max-w-2xl text-2xl font-semibold leading-8 text-primary-900 max-lg:max-w-[32rem] max-sm:max-w-[20rem] sm:text-4xl md:font-medium md:leading-[4rem] md:text-[3.625rem]">
+          <h2 className="max-w-2xl text-2xl font-semibold leading-8 text-primary-900 max-lg:max-w-[32rem] max-sm:max-w-[20rem] sm:text-4xl md:text-[3.625rem] md:font-medium md:leading-[4rem]">
             Trusted by Businesses Across the Globe
           </h2>
         </header>
