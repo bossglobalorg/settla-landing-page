@@ -2,7 +2,7 @@ import assetLib from "@/lib/assets";
 
 const ContactSection = () => {
   return (
-    <section className="-mt-[5.125rem] min-h-dvh bg-[#0A3733] px-6 py-16 pt-[11.125rem] text-white md:px-12 lg:px-20">
+    <section className="-mt-[5.125rem] min-h-dvh bg-primary-900 px-6 py-16 pt-[11.125rem] text-white md:px-12 lg:px-20">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
         <div className="space-y-8">
           <div>
