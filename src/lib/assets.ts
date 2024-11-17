@@ -4,6 +4,7 @@ const assetLib = {
   getStartedImage: "/imgs/get-started-image.png",
   getStartedImageMobile: "/imgs/get-started-image-mobile.png",
   registerNowImage: "/imgs/register-now-image.png",
+  realTimeUpdatesImage: "/imgs/real-time-updates-image.png",
   testimonialImage1: "/imgs/testimonial-image-1.png",
   testimonialImage2: "/imgs/testimonial-image-2.png",
   testimonialImage3: "/imgs/testimonial-image-3.png",
