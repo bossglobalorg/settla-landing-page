@@ -19,7 +19,7 @@ const Navigation = () => {
   return (
     <header
       className={cn(
-        "full-width content-grid fixed z-50 min-h-[5.125rem] w-full",
+        "full-width content-grid fixed z-50 min-h-[5.125rem] w-full py-4",
         opaque ? "bg-white" : "bg-primary-900",
       )}
     >
@@ -71,7 +71,7 @@ const Navigation = () => {
 
       {/* MOBILE NAVIGATION */}
       {openMenu && (
-        <nav className="full-width bg-primary-900/70 absolute top-full z-20 min-h-[calc(100dch-5.125rem)] w-full space-y-10 rounded-bl-3xl pb-20 pt-10 backdrop-blur-md lg:hidden">
+        <nav className="full-width absolute top-full z-20 min-h-[calc(100dch-5.125rem)] w-full space-y-10 rounded-bl-3xl bg-primary-900/70 pb-20 pt-10 backdrop-blur-md lg:hidden">
           <ul className="flex flex-col items-center justify-between gap-8">
             {navlinks.map(({ label, link }) => (
               <li
