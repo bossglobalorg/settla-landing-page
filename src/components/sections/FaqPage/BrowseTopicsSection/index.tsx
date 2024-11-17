@@ -13,7 +13,7 @@ const BrowseTopicsSection = () => {
           {topics.map(({ icon, title, items }, index) => (
             <article
               key={`topic ${index + 1}`}
-              className="w-full min-w-80 max-w-80 rounded-2xl bg-gray-50 px-6 py-8"
+              className="size-full min-w-80 max-w-80 rounded-2xl bg-gray-50 px-6 py-8"
             >
               <figure className="relative mb-6 size-12 rounded-full bg-accent-400">
                 <Image src={icon} alt={`topic ${index + 1} icon`} fill />
