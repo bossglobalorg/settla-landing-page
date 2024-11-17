@@ -13,6 +13,8 @@ const assetLib = {
   realEstateImage: "/imgs/realestate.png",
   travelImage: "/imgs/travel.png",
   discoveryImage: "/imgs/discovery.png",
+  contactOneIcon: "/imgs/c1icon.svg",
+  contactTwoIcon: "/imgs/c2icon.svg"
 };
 
 export default assetLib;
