@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   FacebookIconSVG,
   InstagramIconSVG,
@@ -9,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="content-grid pb-16 pt-32">
+    <footer className="content-grid bg-gray-50 py-[3.75rem] md:pb-16 md:pt-32">
       <div>
         <div className="flex items-start justify-between gap-[3.75rem] max-md:flex-col md:gap-16">
           <div className="flex items-center justify-start gap-4 rounded">
@@ -27,8 +28,10 @@ const Footer = () => {
                   {category.title}
                 </h3>
                 <ul className="space-y-4 leading-6 text-gray-600 max-md:text-sm">
-                  {category.links.map((link, index) => (
-                    <li key={index}>{link}</li>
+                  {category.links.map(({ title, link }, index) => (
+                    <li key={index}>
+                      <Link href={link}>{title}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -63,11 +66,18 @@ export default Footer;
 const footerNav = [
   {
     title: "Company",
-    links: ["About us", "Blog", "Contact us"],
+    links: [
+      { title: "About us", link: "/about" },
+      { title: "Blog", link: "/" },
+      { title: "Contact Us", link: "/contact-us" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Help centre and FAQs", "Terms and privacy"],
+    links: [
+      { title: "Help centre and FAQs", link: "/" },
+      { title: "Terms and privacy", link: "/" },
+    ],
   },
 ];
 

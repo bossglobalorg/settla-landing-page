@@ -13,18 +13,21 @@ import { useState } from "react";
 
 const Navigation = () => {
   const pathname = usePathname();
-  const opaque = pathname === "/about";
+  const opaque = ["/about", "/faq"].includes(pathname);
+
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <header
       className={cn(
-        "full-width content-grid fixed z-50 min-h-[5.125rem] w-full py-4",
-        opaque ? "bg-white" : "bg-primary-900",
+        "full-width content-grid fixed top-0 z-50 min-h-[5.125rem] w-full",
+        opaque
+          ? "bg-gray-25 border-b border-gray-200 md:bg-white"
+          : "bg-primary-900",
       )}
     >
       <nav className="flex items-center justify-between">
-        <div className="flex items-center justify-start gap-4 rounded">
+        <Link href="/" className="flex items-center justify-start gap-4 rounded">
           <SettlaLogoSVG
             className="max-lg:w-[18px]"
             fillColor={opaque ? "#004E43" : "white"}
@@ -33,7 +36,7 @@ const Navigation = () => {
             className="max-lg:w-[68px]"
             fillColor={opaque ? "#004E43" : "white"}
           />
-        </div>
+        </Link>
 
         <ul className="flex items-center justify-between gap-10 max-lg:hidden">
           {navlinks.map(({ label, link }) => (
@@ -65,7 +68,7 @@ const Navigation = () => {
           onClick={() => setOpenMenu((prev) => !prev)}
           className="rounded-lg border border-[#A8D246] p-2 shadow-sm lg:hidden"
         >
-          <MenuBarSVG />
+          <MenuBarSVG strokeColor={opaque ? "#00332C" : "white"} />
         </button>
       </nav>
 
@@ -111,7 +114,7 @@ const navlinks = [
   },
   {
     label: "about us",
-    link: "",
+    link: "/about",
   },
   {
     label: "help center",
@@ -119,6 +122,6 @@ const navlinks = [
   },
   {
     label: "contact us",
-    link: "",
+    link: "/contact-us",
   },
 ];

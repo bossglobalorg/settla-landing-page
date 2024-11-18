@@ -20,7 +20,7 @@ const FaqSection = () => {
             <p>Need further support?</p>
           </div>
 
-          <ButtonLink link="/">Contact us</ButtonLink>
+          <ButtonLink link="/contact-us">Contact us</ButtonLink>
         </header>
 
         <FaqAccordion className="w-full max-w-3xl" />

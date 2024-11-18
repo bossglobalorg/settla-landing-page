@@ -1,6 +1,6 @@
 import { SvgProps } from "@/types/svgs";
 
-const MenuBarSVG: React.FC<SvgProps> = ({ className }) => {
+const MenuBarSVG: React.FC<SvgProps> = ({ className, strokeColor="white" }) => {
   return (
     <svg
       width="16"
@@ -14,7 +14,7 @@ const MenuBarSVG: React.FC<SvgProps> = ({ className }) => {
         <path
           id="Icon"
           d="M2.66797 4.66699H13.3346M2.66797 11.3337H13.3346M2.66797 8.00033H13.3346"
-          stroke="white"
+          stroke={strokeColor}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
