@@ -18,7 +18,9 @@ const ContactSection = () => {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -44,7 +46,7 @@ const ContactSection = () => {
         "service_b6xz0u9",
         "template_d0yfw6h",
         templateParams,
-        "user_vKLtBLy3sWqstDKzPwIgZ"
+        "user_vKLtBLy3sWqstDKzPwIgZ",
       );
 
       setStatus({
@@ -59,10 +61,12 @@ const ContactSection = () => {
         country: "US",
         message: "",
       });
-    } catch (error) {
+    } catch (error: any) {
       setStatus({
         type: "error",
-        message: "There was an error sending your message. Please try again.",
+        message:
+          error.message ??
+          "There was an error sending your message. Please try again.",
       });
     } finally {
       setLoading(false);
@@ -78,7 +82,8 @@ const ContactSection = () => {
               Get in Touch with Settla
             </h2>
             <p className="text-gray-300">
-              We're here to help you with all your currency conversion and payment needs.
+              We're here to help you with all your currency conversion and
+              payment needs.
             </p>
           </div>
 
@@ -113,7 +118,10 @@ const ContactSection = () => {
                   href={`#${social}`}
                   className="rounded-full border border-white p-2 transition-colors hover:bg-white hover:text-[#0A3733]"
                 >
-                  <img src={assetLib[`${social}Svg` as AssetLibKeys]} alt={social} />
+                  <img
+                    src={assetLib[`${social}Svg` as AssetLibKeys]}
+                    alt={social}
+                  />
                 </a>
               ))}
             </div>
