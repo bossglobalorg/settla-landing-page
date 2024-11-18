@@ -58,6 +58,13 @@ const assetLib = {
   youtubeSvg: "/svgs/youtube.svg",
   instagramSvg: "/svgs/instagram.svg",
   facebookSvg: "/svgs/facebook.svg",
+
+  // LOCATION SVGS
+
+  berlin: "/svgs/berlin.svg",
+  lagos: "/svgs/lagos.svg",
+  london: "/svgs/london.svg",
+  sanfransisco: "/svgs/sanfransisco.svg",
 };
 
 export default assetLib;
