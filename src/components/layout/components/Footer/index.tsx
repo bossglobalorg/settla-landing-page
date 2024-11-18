@@ -75,7 +75,7 @@ const footerNav = [
   {
     title: "Resources",
     links: [
-      { title: "Help centre and FAQs", link: "/" },
+      { title: "Help centre and FAQs", link: "/faq" },
       { title: "Terms and privacy", link: "/" },
     ],
   },
