@@ -1,7 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import assetLib from "@/lib/assets";
+
+type AssetLibKeys = keyof typeof assetLib; // Extract valid keys from assetLib
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,10 +14,11 @@ const ContactSection = () => {
     country: "US",
     message: "",
   });
+
   const [status, setStatus] = useState({ type: "", message: "" });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -23,13 +26,12 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ type: "", message: "" });
 
     try {
-      // Replace these with your actual EmailJS credentials
       const templateParams = {
         from_name: `${formData.firstName} ${formData.lastName}`,
         reply_to: formData.email,
@@ -42,7 +44,7 @@ const ContactSection = () => {
         "service_b6xz0u9",
         "template_d0yfw6h",
         templateParams,
-        "user_vKLtBLy3sWqstDKzPwIgZ",
+        "user_vKLtBLy3sWqstDKzPwIgZ"
       );
 
       setStatus({
@@ -71,14 +73,12 @@ const ContactSection = () => {
     <section className="-mt-[5.125rem] min-h-dvh bg-primary-900 px-6 py-16 pt-[11.125rem] text-white md:px-12 lg:px-20">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
         <div className="space-y-8">
-          {/* Left side content remains the same */}
           <div>
             <h2 className="mb-4 text-4xl font-semibold">
               Get in Touch with Settla
             </h2>
             <p className="text-gray-300">
-              We're here to help you with all your currency conversion and
-              payment needs.
+              We're here to help you with all your currency conversion and payment needs.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ const ContactSection = () => {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-300">
                 <img src={assetLib.contactOneIcon} alt="contact" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold">Have a questions?</h3>
+              <h3 className="mb-2 text-xl font-semibold">Have questions?</h3>
               <p className="text-gray-300">
                 Find the answers to frequently asked questions here.
               </p>
@@ -113,7 +113,7 @@ const ContactSection = () => {
                   href={`#${social}`}
                   className="rounded-full border border-white p-2 transition-colors hover:bg-white hover:text-[#0A3733]"
                 >
-                  <div className="h-6 w-6" />
+                  <img src={assetLib[`${social}Svg` as AssetLibKeys]} alt={social} />
                 </a>
               ))}
             </div>
@@ -184,7 +184,6 @@ const ContactSection = () => {
                   className="rounded-lg rounded-r-none border border-r-0 px-4 py-2 text-gray-700"
                 >
                   <option value="US">US</option>
-                  {/* Add more country options as needed */}
                 </select>
                 <input
                   type="tel"
