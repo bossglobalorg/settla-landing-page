@@ -116,7 +116,7 @@ const ContactSection = () => {
                 <a
                   key={social}
                   href={`#${social}`}
-                  className="rounded-full border border-white p-2 transition-colors hover:bg-white hover:text-[#0A3733]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white transition-colors hover:bg-white hover:text-[#0A3733]"
                 >
                   <img
                     src={assetLib[`${social}Svg` as AssetLibKeys]}
