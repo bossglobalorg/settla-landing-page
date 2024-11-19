@@ -8,7 +8,12 @@ const BannerSection = () => {
       <div className="flex grow flex-col justify-between">
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-4">
-            <img src={assetLib.aboutUsIcon} alt="about us icon" />
+            <Image
+              src={assetLib.aboutUsIcon}
+              alt="about us icon"
+              width={"40"}
+              height={40}
+            />
             <HighlightedText text={"About Us"} variant={"primary"} />
           </div>
           <h1 className="mt-4 text-[2rem] font-[500] leading-tight text-[#003D29] md:text-[4rem] md:leading-snug">
