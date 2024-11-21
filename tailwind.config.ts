@@ -39,7 +39,7 @@ export default {
         inter: ["Inter", "sans-serif"],
       },
       gridTemplateColumns: {
-        'auto-fit-21': 'repeat(auto-fit, minmax(24rem, 1fr))',
+        'auto-fit-20': 'repeat(auto-fit, minmax(20rem, 1fr))',
         'auto-fit-24': 'repeat(auto-fit, minmax(24rem, 1fr))',
       },
     },

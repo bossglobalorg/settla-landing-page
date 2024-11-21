@@ -53,7 +53,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </p>
 
       <div className="px-4 pb-6 md:px-10 md:pb-10">
-        <p className="text-lg font-semibold sm:leading-8 sm:text-2xl">
+        <p className="text-lg font-semibold sm:text-2xl sm:leading-8">
           {author}
         </p>
         <p className="text-sm font-normal leading-6 sm:text-xl">{from}</p>
@@ -76,7 +76,7 @@ const TestimonialSection = () => {
           </h2>
         </header>
 
-        <div className="grid-cols-auto-fit-21 sm:grid-cols-auto-fit-24 grid grid-rows-[auto_auto_auto] place-items-center gap-6">
+        <div className="sm:grid-cols-auto-fit-24 grid grid-rows-[auto_auto_auto] place-items-center gap-6">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.from} {...testimonial} />
           ))}

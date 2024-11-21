@@ -25,7 +25,7 @@ const HeroSection = () => {
         </ButtonLink>
       </div>
 
-      <figure className="max-lg:full-width relative mt-auto min-h-[13.1875rem] w-full md:min-h-[22rem] lg:min-h-[28rem] xl:min-h-[32rem]">
+      <figure className="max-lg:full-width relative -mb-10 mt-auto min-h-[13.1875rem] w-full sm:-mb-8 md:min-h-[22rem] lg:min-h-[28rem] xl:min-h-[32rem]">
         <Image
           src={assetLib.homePageHeroImage}
           className="size-full bg-top object-cover object-top max-lg:-ml-8"
