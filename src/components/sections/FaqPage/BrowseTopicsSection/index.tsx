@@ -3,13 +3,13 @@ import { topics } from "./constants";
 
 const BrowseTopicsSection = () => {
   return (
-    <section className="content-grid">
+    <section className="content-grid overflow-hidden">
       <div className="mx-auto w-full max-w-[63rem] space-y-8">
         <h2 className="text-2xl font-medium leading-8 text-primary-900">
           Browse topics
         </h2>
 
-        <div className="grid grid-cols-1 place-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex grid-cols-1 place-items-center gap-8 overflow-auto max-md:mb-4 md:grid md:grid-cols-2 lg:grid-cols-3">
           {topics.map(({ icon, title, items }, index) => (
             <article
               key={`topic ${index + 1}`}
