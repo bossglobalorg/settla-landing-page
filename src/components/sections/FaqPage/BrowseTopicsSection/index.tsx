@@ -9,7 +9,7 @@ const BrowseTopicsSection = () => {
           Browse topics
         </h2>
 
-        <div className="flex grid-cols-1 place-items-center gap-8 overflow-auto max-md:mb-4 md:grid md:grid-cols-2 lg:grid-cols-3">
+        <div className="md:no-scrollbar flex grid-cols-1 place-items-center gap-8 overflow-auto max-md:mb-4 md:grid md:grid-cols-2 lg:grid-cols-3">
           {topics.map(({ icon, title, items }, index) => (
             <article
               key={`topic ${index + 1}`}
