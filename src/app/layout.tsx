@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
+import { ContextProvider } from "@/provider";
 import "./globals.css";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
 
 export const metadata: Metadata = {
   title: "Settla",
@@ -20,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <ContextProvider>{children}</ContextProvider>
+      </body>
     </html>
   );
 }
