@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +7,33 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 100vw;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(10, 51, 44, 0.5);
+  border-radius: 100vw;
+  transition: all 500ms ease-in-out;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+  transition: all 500ms ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(10, 51, 44, 0.5);
 }
 
 body {
@@ -56,7 +83,7 @@ body {
   }
 
   .no-scrollbar {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
