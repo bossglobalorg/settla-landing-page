@@ -42,6 +42,12 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+select {
+  appearance: none; /* Hides the default arrow */
+  background: url("/svgs/arrow-down.svg") no-repeat right 10px center;
+  padding-right: 2rem;
+}
+
 @layer utilities {
   /* GRID LAYOUT */
   .content-grid {

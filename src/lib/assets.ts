@@ -26,6 +26,7 @@ const assetLib = {
   // ICON SVGS
   checkIcon: "/svgs/check-icon.svg",
   aboutUsIcon: "/svgs/about-us.svg",
+  arrowDown: "/svgs/arrow-down.svg",
 
   usFlagIcon: "/svgs/us-flag-icon.svg",
   ukFlagIcon: "/svgs/uk-flag-icon.svg",
