@@ -3,47 +3,60 @@ import assetLib from "@/lib/assets";
 
 const testimonials = [
   {
-    from: "Hamdee Autos",
+    from: "CEO, Hamdee Autos",
+    author: "Yinka Ayobamiji",
     src: assetLib.testimonialImage1,
     credit:
-      "accelerates international vehicle imports using Settla, reducing transaction times...",
+      " has been a revelation for us. We move between $50,000 and $100,000 every month, and Settla's service is not only fast but remarkably dependable. They handle our cross-border payments with ease, Settla feels like a true partner who values our growth as much as we do",
   },
   {
-    from: "Glofex",
+    from: "Founder, Glofex",
+    author: "Kunle Adeyanju",
     src: assetLib.testimonialImage2,
     credit:
-      "we optimize our freight forwarding services with Settla, saving 40% on currency conversion fees.",
+      " has transformed our cross-border transactions. With monthly volumes of over $200,000, we've seen exceptional efficiency and cost savings. Their settlement times and customer support are unmatched, always exceeding our expectations.",
   },
   {
-    from: "Ojuola",
+    from: "CEO, Fountain Havens",
+    author: "Olasijibomi Ojuola",
     src: assetLib.testimonialImage3,
     credit:
-      "uses Settla to manage international payments, ensuring smooth financial transactions...",
+      "Other platforms we've used in the past have not performed as well as Settla has for us. Managing over half a million dollars in transactions with them, we've appreciated the reliable service and timely settlements, which have streamlined our financial operations and allowed us to focus on growth.",
   },
 ];
 
 interface TestimonialCardProps {
   from: string;
+  author: string;
   src: string;
   credit: string;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
   from,
+  author,
   src,
   credit,
 }) => {
   return (
-    <article className="w-full max-w-96 overflow-hidden rounded-3xl bg-white">
+    <article className="row-span-3 grid size-full max-h-[54rem] max-w-96 grid-rows-subgrid gap-6 overflow-hidden rounded-3xl bg-white text-lg leading-7 text-primary-900 sm:leading-8 md:gap-8 md:text-2xl md:tracking-[-0.0625rem]">
       <figure className="relative h-80 bg-primary-400">
         <Image src={src} alt={`${from} image`} fill />
       </figure>
 
-      <div className="px-4 py-6 text-lg leading-8 text-primary-900 md:px-10 md:pb-10 md:pt-8 md:text-2xl md:tracking-[-0.0625rem]">
-        <p>
-          “{from === "Glofex" && "At "}
-          <span className="font-semibold">{from}</span> {credit}”
+      <p className="px-4 md:px-10">
+        “
+        {author !== "Olasijibomi Ojuola" && (
+          <span className="font-semibold">Settla</span>
+        )}
+        {credit}”
+      </p>
+
+      <div className="px-4 pb-6 md:px-10 md:pb-10">
+        <p className="text-lg font-semibold sm:text-2xl sm:leading-8">
+          {author}
         </p>
+        <p className="text-sm font-normal leading-6 sm:text-xl">{from}</p>
       </div>
     </article>
   );
@@ -63,7 +76,7 @@ const TestimonialSection = () => {
           </h2>
         </header>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 xl:justify-between">
+        <div className="sm:grid-cols-auto-fit-24 grid grid-rows-[auto_auto_auto] place-items-center gap-6">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.from} {...testimonial} />
           ))}

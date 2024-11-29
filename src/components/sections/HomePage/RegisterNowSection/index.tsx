@@ -6,9 +6,9 @@ import assetLib from "@/lib/assets";
 const RegisterNowSection = () => {
   return (
     <section className="content-grid pb-[3.75rem] lg:pb-32">
-      <div className="flex items-center justify-between rounded-[1.125rem] bg-primary-900 p-4 text-white max-lg:flex-col sm:p-8 md:rounded-[2rem] md:px-16 md:py-12 lg:gap-8">
+      <div className="flex items-center justify-between overflow-hidden rounded-[1.125rem] bg-primary-900 py-4 px-5 text-white max-lg:flex-col sm:p-8 md:rounded-[2rem] md:px-16 md:py-12 lg:gap-8">
         <div className="max-w-[33rem]">
-          <h2 className="md:text-h2 mb-4 text-[2.75rem] font-semibold leading-[3.125rem] md:font-medium md:leading-[4rem] md:tracking-[-0.125rem]">
+          <h2 className="mb-4 text-[2.75rem] font-semibold leading-[3.125rem] md:text-h2 md:font-medium md:leading-[4rem] md:tracking-[-0.125rem]">
             Get <span className="text-accent-400">zero-fee</span>{" "}
             <br className="md:hidden" /> on your first{" "}
             <br className="md:hidden" />

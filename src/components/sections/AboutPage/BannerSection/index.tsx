@@ -1,38 +1,45 @@
-import PageLayout from "@/components/layout";
+import HighlightedText from "@/components/ui/HeaderCaption";
 import assetLib from "@/lib/assets";
 import Image from "next/image";
 
 const BannerSection = () => {
   return (
-    // <PageLayout>
-      <section className="content-grid -mt-[5.125rem] min-h-dvh gap-y-12 overflow-hidden bg-[#FFF7EB] px-6 py-16 md:px-12 md:py-24 lg:px-20">
-        <div className="mb-12 text-center">
-          <span className="text-sm font-semibold uppercase tracking-wide text-[#FFD66B]">
-            About us
-          </span>
+    <section className="content-grid relative flex min-h-dvh flex-col bg-[#FFF7EB] px-6 pt-[11.125rem] md:px-12 md:pt-24 lg:px-20">
+      <div className="flex grow flex-col justify-between">
+        <div className="mb-16 text-center">
+          <div className="flex items-center justify-center gap-4">
+            <Image
+              src={assetLib.aboutUsIcon}
+              alt="about us icon"
+              width={"40"}
+              height={40}
+            />
+            <HighlightedText text={"About Us"} variant={"primary"} />
+          </div>
           <h1 className="mt-4 text-[2rem] font-[500] leading-tight text-[#003D29] md:text-[4rem] md:leading-snug">
-            Global Payments. Built for Community. Designed for Growth
+            Global Payments. Built for <br /> Community. Designed for Growth
           </h1>
           <p className="mt-6 text-base leading-relaxed text-[#4D4D4D] md:text-lg">
             From the heart of the African Diaspora to the world stage, Settla
-            strengthens communities by fueling financial growth and shared
-            success.
+            strengthens <br /> communities by fueling financial growth and
+            shared success.
           </p>
         </div>
 
-        {/* Image Section */}
-        <div className="relative mx-auto h-[400px] max-w-4xl overflow-hidden rounded-lg md:h-[600px]">
-          <Image
-            src={assetLib.aboutBannerImage} // Ensure this resolves correctly
-            width={1200}
-            height={600}
-            // className="size-full bg-top object-cover object-top"
-            alt="Hero Image displaying Settla dashboard on a laptop screen"
-            // fill
-          />
+        <div className="rounded-t-[32px] bg-white">
+          <figure className="relative mt-auto aspect-[16/9] w-full overflow-hidden rounded-[32px]">
+            <Image
+              src={assetLib.aboutBannerImage}
+              alt="Hero Image displaying Settla dashboard on a laptop screen"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+              priority
+            />
+          </figure>
         </div>
-      </section>
-    // </PageLayout>
+      </div>
+    </section>
   );
 };
 

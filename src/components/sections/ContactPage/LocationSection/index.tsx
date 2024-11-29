@@ -1,9 +1,16 @@
+import assetLib from "@/lib/assets";
+import Image from "next/image";
+
 const LocationsSection = () => {
   const locations = [
-    { city: "Lagos", country: "Nigeria", icon: "🌉" },
-    { city: "San Fransisco", country: "United States", icon: "🌉" },
-    { city: "London", country: "United Kingdom", icon: "🏛" },
-    { city: "Regina", country: "Canada", icon: "🗼" },
+    { city: "Lagos", country: "Nigeria", icon: assetLib.lagos },
+    {
+      city: "San Fransisco",
+      country: "United States",
+      icon: assetLib.sanfransisco,
+    },
+    { city: "London", country: "United Kingdom", icon: assetLib.london },
+    { city: "Regina", country: "Canada", icon: assetLib.berlin },
   ];
 
   return (
@@ -20,9 +27,12 @@ const LocationsSection = () => {
         <div className="grid gap-8 md:grid-cols-4">
           {locations.map((location) => (
             <div key={location.city} className="flex flex-col items-center">
-              <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-[#0A3733]">
-                <div className="text-4xl">{location.icon}</div>
-              </div>
+              <Image
+                src={location.icon}
+                alt={`${location.city} image`}
+                width={120}
+                height={120}
+              />
               <h3 className="text-xl font-semibold text-[#0A3733]">
                 {location.city}
               </h3>
