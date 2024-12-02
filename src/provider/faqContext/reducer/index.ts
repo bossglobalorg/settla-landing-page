@@ -13,8 +13,12 @@ export const faqReducer = (state: FAQState, action: Action): FAQState => {
     case "SET_FILTER":
       return {
         ...state,
-        selectedFilter: action.payload,
-        filteredFAQs: filterFAQs(state.searchQuery, action.payload),
+        selectedFilter:
+          state.selectedFilter === action.payload ? "" : action.payload,
+        filteredFAQs: filterFAQs(
+          state.searchQuery,
+          state.selectedFilter === action.payload ? "" : action.payload,
+        ),
       };
     case "RESET_FILTERS":
       return {
