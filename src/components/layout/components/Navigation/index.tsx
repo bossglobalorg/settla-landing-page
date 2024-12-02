@@ -92,11 +92,11 @@ const Navigation = () => {
           <div className="mx-auto w-fit space-x-3">
             <ButtonLink
               variant={opaque ? "secondary-outline" : "primary-outline"}
-              className="px-5 py-2.5 text-[0.9375rem]"
+              className="px-5 !py-2.5 text-[0.9375rem]"
             >
               Log in
             </ButtonLink>
-            <ButtonLink className="px-5 py-2.5 text-[0.9375rem]">
+            <ButtonLink className="px-5 !py-2.5 text-[0.9375rem]">
               Get Started
             </ButtonLink>
           </div>
