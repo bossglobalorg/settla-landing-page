@@ -118,7 +118,7 @@ const navlinks = [
   },
   {
     label: "help center",
-    link: "",
+    link: "/faq",
   },
   {
     label: "contact us",
