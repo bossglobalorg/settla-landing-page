@@ -82,10 +82,7 @@ const Navigation = () => {
             {navlinks.map(({ label, link }) => (
               <li
                 key={label}
-                className={cn(
-                  "text-[0.9375rem] capitalize",
-                  opaque ? "text-primary-900" : "text-white",
-                )}
+                className={cn("text-[0.9375rem] capitalize text-white")}
               >
                 <Link href={link}>{label}</Link>
               </li>
@@ -95,7 +92,7 @@ const Navigation = () => {
           <div className="mx-auto w-fit space-x-3">
             <ButtonLink
               variant={opaque ? "secondary-outline" : "primary-outline"}
-              className="!py-2.5 px-5 text-[0.9375rem]"
+              className="border-white !py-2.5 px-5 text-[0.9375rem] text-white hover:text-neutral-100"
             >
               Log in
             </ButtonLink>

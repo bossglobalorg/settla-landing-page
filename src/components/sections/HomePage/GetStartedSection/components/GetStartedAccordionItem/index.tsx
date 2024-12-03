@@ -33,7 +33,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     >
       <div
         className={cn(
-          "flex size-10 items-center justify-center rounded-full font-medium transition-colors duration-200",
+          "flex size-10 min-w-10 items-center justify-center rounded-full font-medium transition-colors duration-200",
           isOpen
             ? "bg-accent-400 text-primary-900"
             : "bg-gray-100 text-gray-600",
