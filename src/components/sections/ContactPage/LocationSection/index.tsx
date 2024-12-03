@@ -1,4 +1,5 @@
 import assetLib from "@/lib/assets";
+import Image from "next/image";
 
 const LocationsSection = () => {
   const locations = [
@@ -26,7 +27,12 @@ const LocationsSection = () => {
         <div className="grid gap-8 md:grid-cols-4">
           {locations.map((location) => (
             <div key={location.city} className="flex flex-col items-center">
-              <img src={location.icon} alt={`${location.city} image`} />
+              <Image
+                src={location.icon}
+                alt={`${location.city} image`}
+                width={120}
+                height={120}
+              />
               <h3 className="text-xl font-semibold text-[#0A3733]">
                 {location.city}
               </h3>

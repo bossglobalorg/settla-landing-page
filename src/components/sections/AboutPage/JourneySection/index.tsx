@@ -1,6 +1,7 @@
 "use client";
 
 import assetLib from "@/lib/assets";
+import Image from "next/image";
 import { useState } from "react";
 
 const JourneySection = () => {
@@ -77,15 +78,17 @@ const JourneySection = () => {
         </div>
 
         {/* Active Card */}
-        <div className="mt-8 w-full max-w-md rounded-3xl bg-primary-900 p-6 text-center text-white shadow-lg">
+        <div className="mt-8 w-full max-w-md rounded-3xl bg-primary-900 py-6 text-center text-white shadow-lg">
           <h3 className="text-xl font-bold text-accent-400">
             {milestones[activeIndex].year}
           </h3>
           <p className="mt-4 text-lg">{milestones[activeIndex].description}</p>
-          <img
+          <Image
             src={milestones[activeIndex].image}
             alt={`Milestone ${milestones[activeIndex].year}`}
             className="mt-6 w-full rounded-lg"
+            width={320}
+            height={290}
           />
         </div>
 

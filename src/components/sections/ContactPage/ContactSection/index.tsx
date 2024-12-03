@@ -2,6 +2,8 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import assetLib from "@/lib/assets";
+import Image from "next/image";
+import { CustomDropdown } from "@/components/ui/Select";
 
 type AssetLibKeys = keyof typeof assetLib; // Extract valid keys from assetLib
 
@@ -90,7 +92,12 @@ const ContactSection = () => {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-lg bg-[#0D4440] p-6">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-300">
-                <img src={assetLib.contactOneIcon} alt="contact" />
+                <Image
+                  src={assetLib.contactOneIcon}
+                  alt={`Contact Icon`}
+                  width={48}
+                  height={48}
+                />
               </div>
               <h3 className="mb-2 text-xl font-semibold">Have questions?</h3>
               <p className="text-gray-300">
@@ -100,7 +107,12 @@ const ContactSection = () => {
 
             <div className="rounded-lg bg-[#0D4440] p-6">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow-300">
-                <img src={assetLib.contactTwoIcon} alt="blog" />
+                <Image
+                  src={assetLib.contactTwoIcon}
+                  alt={`Contact Icon`}
+                  width={48}
+                  height={48}
+                />
               </div>
               <h3 className="mb-2 text-xl font-semibold">Settla Blog</h3>
               <p className="text-gray-300">
@@ -118,9 +130,11 @@ const ContactSection = () => {
                   href={`#${social}`}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-white transition-colors hover:bg-white hover:text-[#0A3733]"
                 >
-                  <img
+                  <Image
                     src={assetLib[`${social}Svg` as AssetLibKeys]}
-                    alt={social}
+                    alt={`Social Icon`}
+                    width={7.56}
+                    height={15.24}
                   />
                 </a>
               ))}
@@ -185,20 +199,18 @@ const ContactSection = () => {
             <div>
               <label className="mb-2 block text-gray-700">Phone number</label>
               <div className="flex">
-                <select
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  className="rounded-lg rounded-r-none border border-r-0 px-4 py-2 text-gray-700"
-                >
-                  <option value="US">US</option>
-                </select>
+                <CustomDropdown
+                  selectedValue={formData.country}
+                  onChange={(value) =>
+                    setFormData((prev) => ({ ...prev, country: value }))
+                  }
+                />
                 <input
                   type="tel"
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  className="w-full rounded-lg rounded-l-none border px-4 py-2 text-gray-700"
+                  className="w-full rounded-lg rounded-l-none border border-l-0 px-4 py-2 text-gray-700"
                   placeholder="+1 (000) 000-0000"
                   required
                 />
