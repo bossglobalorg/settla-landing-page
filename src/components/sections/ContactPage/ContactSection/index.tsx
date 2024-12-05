@@ -3,7 +3,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import assetLib from "@/lib/assets";
 import Image from "next/image";
-import { CustomDropdown } from "@/components/ui/Select";
+import CustomDropdown from "@/components/ui/Select";
 
 type AssetLibKeys = keyof typeof assetLib; // Extract valid keys from assetLib
 
@@ -17,7 +17,22 @@ const ContactSection = () => {
     message: "",
   });
 
+  type CountryCode =
+    | "US"
+    | "GB"
+    | "CA"
+    | "AU"
+    | "IN"
+    | "DE"
+    | "FR"
+    | "IT"
+    | "ES"
+    | "NG"
+    | "BR"; // add more as needed
+
   const [status, setStatus] = useState({ type: "", message: "" });
+  const [country, setCountry] = useState<CountryCode>("US");
+
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
@@ -73,6 +88,10 @@ const ContactSection = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleCountrySelect = (countryCode: string) => {
+    setFormData((prev) => ({ ...prev, country: countryCode }));
   };
 
   return (
@@ -198,21 +217,13 @@ const ContactSection = () => {
 
             <div>
               <label className="mb-2 block text-gray-700">Phone number</label>
-              <div className="flex">
+              <div className="flex rounded-lg border border-gray-300">
                 <CustomDropdown
-                  selectedValue={formData.country}
-                  onChange={(value) =>
-                    setFormData((prev) => ({ ...prev, country: value }))
+                  value={country}
+                  onChange={(code) => setCountry(code as CountryCode)}
+                  onPhoneChange={(phone) =>
+                    setFormData((prev) => ({ ...prev, phoneNumber: phone }))
                   }
-                />
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  className="w-full rounded-lg rounded-l-none border border-l-0 px-4 py-2 text-gray-700"
-                  placeholder="+1 (000) 000-0000"
-                  required
                 />
               </div>
             </div>

@@ -1,47 +1,154 @@
-import { useState } from "react";
-import { countries } from "@/utils";
-import assetLib from "@/lib/assets";
+"use client";
 
-export const CustomDropdown = ({
-  selectedValue,
+import { useState, useEffect } from "react";
+import Select from "react-select";
+import countryList from "react-select-country-list";
+
+interface CountryOption {
+  value: string;
+  label: string;
+  phoneCode: string;
+  flag: string;
+}
+
+const COUNTRY_CODES: { [key: string]: string } = {
+  US: "+1",
+  GB: "+44",
+  CA: "+1",
+  AU: "+61",
+  IN: "+91",
+  NG: "+234",
+  DE: "+49",
+  FR: "+33",
+  IT: "+39",
+  ES: "+34",
+  BR: "+55",
+  // Add more as needed
+};
+
+function CustomDropdown({
+  value,
   onChange,
+  onPhoneChange,
 }: {
-  selectedValue: string;
+  value: string;
   onChange: (value: string) => void;
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
+  onPhoneChange: (value: string) => void;
+}) {
+  const [selectedCountry, setSelectedCountry] = useState<CountryOption | null>(
+    null,
+  );
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-  const toggleDropdown = () => setIsOpen((prev) => !prev);
+  const options: CountryOption[] = countryList()
+    .getData()
+    .map((country) => ({
+      value: country.value,
+      label: country.label,
+      phoneCode: COUNTRY_CODES[country.value] || "",
+      flag: `https://flagcdn.com/w20/${country.value.toLowerCase()}.png`,
+    }));
 
-  const handleSelect = (value: string) => {
-    onChange(value);
-    setIsOpen(false);
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawValue = e.target.value.replace(/[^\d]/g, "");
+    let formattedNumber = rawValue;
+
+    if (rawValue.length > 0) {
+      formattedNumber = `(${rawValue.slice(0, 3)}`;
+      if (rawValue.length > 3) {
+        formattedNumber += `) ${rawValue.slice(3, 6)}`;
+      }
+      if (rawValue.length > 6) {
+        formattedNumber += `-${rawValue.slice(6, 10)}`;
+      }
+    }
+
+    setPhoneNumber(formattedNumber);
+    onPhoneChange(`${selectedCountry?.phoneCode || "+1"} ${formattedNumber}`);
   };
 
-  return (
-    <div className="relative">
-      <button
-        type="button"
-        onClick={toggleDropdown}
-        className="flex w-20 items-center gap-4 rounded-b-none rounded-l-lg rounded-t-none border border-r-0 px-4 py-2 text-left text-gray-700"
-      >
-        {selectedValue}
-        <img src={assetLib.arrowDown} />
-      </button>
+  const handleCountryChange = (option: CountryOption | null) => {
+    setSelectedCountry(option);
+    if (option) {
+      onChange(option.value);
+      // Preserve the phone number but update the country code
+      onPhoneChange(`${option.phoneCode} ${phoneNumber}`);
+    }
+  };
 
-      {isOpen && (
-        <div className="absolute z-10 mt-1 max-h-[200px] w-20 overflow-y-auto rounded-lg border bg-primary-900 shadow-lg">
-          {countries.map((country) => (
-            <div
-              key={country.code}
-              className="cursor-pointer px-4 py-2 hover:bg-primary-400"
-              onClick={() => handleSelect(country.code)}
-            >
-              {country.code}
+  useEffect(() => {
+    // Set default country on mount
+    const defaultCountry = options.find((option) => option.value === "US");
+    if (defaultCountry) {
+      setSelectedCountry(defaultCountry);
+    }
+  }, []);
+
+  return (
+    <div className="w-full space-y-2">
+      <div className="flex w-full items-center rounded-lg border border-gray-300 bg-white px-3 py-2 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
+        <Select<CountryOption>
+          options={options}
+          value={selectedCountry}
+          onChange={handleCountryChange}
+          isSearchable
+          formatOptionLabel={(option) => (
+            <div className="flex items-center gap-2">
+              <img
+                src={option.flag}
+                alt={`${option.label} flag`}
+                className="h-4 w-6 object-cover"
+              />
+              <span>{option.value}</span>
             </div>
-          ))}
+          )}
+          styles={{
+            control: (base) => ({
+              ...base,
+              border: "none",
+              boxShadow: "none",
+              minHeight: "auto",
+              background: "transparent",
+              width: "100px",
+            }),
+            menu: (base) => ({
+              ...base,
+              zIndex: 9999,
+            }),
+            option: (base, state) => ({
+              ...base,
+              backgroundColor: state.isFocused ? "#f3f4f6" : "white",
+              color: "#111827",
+              cursor: "pointer",
+              padding: "8px 12px",
+            }),
+            valueContainer: (base) => ({
+              ...base,
+              padding: "0",
+            }),
+            indicatorSeparator: () => ({
+              display: "none",
+            }),
+            dropdownIndicator: (base) => ({
+              ...base,
+              padding: "0 4px",
+            }),
+          }}
+        />
+        <div className="mx-2 text-gray-400">|</div>
+        <div className="text-gray-600">
+          {selectedCountry?.phoneCode || "+1"}
         </div>
-      )}
+        <input
+          type="tel"
+          value={phoneNumber}
+          onChange={handlePhoneChange}
+          placeholder="(000) 000-0000"
+          className="flex-1 border-none bg-transparent px-2 focus:outline-none focus:ring-0"
+        />
+      </div>
     </div>
   );
-};
+}
+
+export default CustomDropdown;
