@@ -36,19 +36,19 @@ export const defaultFAQs: FAQItem[] = [
     question: "How do I access my Settla account?",
     answer:
       "Access your account by logging in via the Settla app or website using your registered email and password.",
-    tags: ["managing your account"],
+    tags: ["manage your account"],
   },
   {
     question: "Can I manage multiple wallets?",
     answer:
       "Absolutely. Settla allows you to manage multiple currency wallets for seamless transactions and better control over your finances.",
-    tags: ["managing your account"],
+    tags: ["manage your account"],
   },
   {
     question: "What if I forget my password?",
     answer:
       "Use the “Forgot Password” option on the login page to reset your password securely.",
-    tags: ["managing your account"],
+    tags: ["manage your account"],
   },
 
   // RECEIVING MONEY
@@ -127,6 +127,20 @@ export const defaultFAQs: FAQItem[] = [
     tags: ["account"],
   },
 
+  // PAY-OUTS
+  {
+    question: "How do I withdraw money from Settla?",
+    answer:
+      "Go to your wallet, select “Pay-Out,” choose your preferred bank or payment method, and confirm the withdrawal.",
+    tags: ["pay-outs"],
+  },
+  {
+    question: "Are there any pay-out fees?",
+    answer:
+      "Fees vary depending on your selected payment method and currency. You'll see the exact cost before completing the transaction.",
+    tags: ["pay-outs"],
+  },
+
   //  SECURITY
   {
     question: "Is my money safe with Settla?",
@@ -154,36 +168,4 @@ export const defaultFAQs: FAQItem[] = [
       "Payments are typically fast, but delays can happen due to bank processing times. Check your transaction details or contact Settla support for help.",
     tags: ["track a payment"],
   },
-
-  // {
-  //   question: "What currencies can I send and receive with Settla?",
-  //   answer:
-  //     "Settla supports major currencies, including USD, GBP, EUR, CAD, and NGN, and allows you to send and receive funds easily in these currencies. We are always expanding our currency options to meet your needs.",
-  //   tags: ["settla"],
-  // },
-  // {
-  //   question:
-  //     "What's the process for KYC/KYB verification, and how long does it take?",
-  //   answer:
-  //     "Our KYC (Know Your Customer) and KYB (Know Your Business) processes are quick and straightforward. Simply submit the required documents online, and verification typically takes less than 24 hours, depending on the information provided. Our support team will notify you of any additional steps if necessary.",
-  //   tags: ["settla"],
-  // },
-  // {
-  //   question: "Are there limits on how much I can send or receive with Settla?",
-  //   answer:
-  //     "Settla offers flexible transaction limits based on your account type and verification level. After full verification, there is no amount limit on how much you can send or receive. For specific details, visit your account dashboard or contact our support team for assistance.",
-  //   tags: ["settla"],
-  // },
-  // {
-  //   question: "How long do international transfers take with Settla?",
-  //   answer:
-  //     "Most international transfers are completed within 1–2 business days, though exact timing depends on the recipient’s country and currency. We provide real-time updates, so you’ll always know the status of your transfer.",
-  //   tags: ["settla"],
-  // },
-  // {
-  //   question: "How can I add money to my Settla account?",
-  //   answer:
-  //     "To add money, log in to your Settla account, click on 'Add Funds,' and choose from options like bank transfer, credit/debit card, or linking an external wallet. Funds will be available in your Settla account instantly or within a few minutes, depending on your method.",
-  //   tags: ["settla"],
-  // },
 ];

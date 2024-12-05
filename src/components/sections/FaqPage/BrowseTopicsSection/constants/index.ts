@@ -3,7 +3,7 @@ import assetLib from "@/lib/assets";
 export const topics = [
   {
     icon: assetLib.topic1Icon,
-    title: "Sending money",
+    title: "sending money",
     items: [
       "Sending a bank transfer",
       "Transfers between Settla users",
@@ -12,7 +12,7 @@ export const topics = [
   },
   {
     icon: assetLib.topic2Icon,
-    title: "Manage your account",
+    title: "manage your account",
     items: [
       "Update Personal Details",
       "Currency account details",
@@ -21,7 +21,7 @@ export const topics = [
   },
   {
     icon: assetLib.topic3Icon,
-    title: "Receiving money",
+    title: "receiving money",
     items: [
       "Request money from other users",
       "Receiving a money transfer with your account",
@@ -29,7 +29,7 @@ export const topics = [
   },
   {
     icon: assetLib.topic4Icon,
-    title: "Settla support",
+    title: "settla support",
     items: [
       "Getting started with Settla support",
       "Get support with exchange fees",
@@ -38,7 +38,7 @@ export const topics = [
   },
   {
     icon: assetLib.topic5Icon,
-    title: "Conversion",
+    title: "conversion",
     items: [
       "Creating conversion",
       "Foreign exchange rate calculation",
@@ -47,7 +47,7 @@ export const topics = [
   },
   {
     icon: assetLib.topic6Icon,
-    title: "How to guides",
+    title: "how to guides",
     items: [
       "Set up rate alerts",
       "Multi-currencies accounts",

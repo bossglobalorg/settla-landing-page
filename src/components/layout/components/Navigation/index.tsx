@@ -22,12 +22,15 @@ const Navigation = () => {
       className={cn(
         "full-width content-grid fixed top-0 z-50 min-h-[5.125rem] w-full",
         opaque
-          ? "bg-gray-25 border-b border-gray-200 md:bg-white"
+          ? "border-b border-gray-200 bg-gray-25 md:bg-white"
           : "bg-primary-900",
       )}
     >
       <nav className="flex items-center justify-between">
-        <Link href="/" className="flex items-center justify-start gap-4 rounded">
+        <Link
+          href="/"
+          className="flex items-center justify-start gap-4 rounded"
+        >
           <SettlaLogoSVG
             className="max-lg:w-[18px]"
             fillColor={opaque ? "#004E43" : "white"}
@@ -55,11 +58,11 @@ const Navigation = () => {
         <div className="space-x-3 max-lg:hidden">
           <ButtonLink
             variant={opaque ? "secondary-outline" : "primary-outline"}
-            className="px-5 py-2.5 text-[0.9375rem]"
+            className="!py-2.5 px-5 text-[0.9375rem]"
           >
             Log in
           </ButtonLink>
-          <ButtonLink className="px-5 py-2.5 text-[0.9375rem]">
+          <ButtonLink className="!py-2.5 px-5 text-[0.9375rem]">
             Get Started
           </ButtonLink>
         </div>
@@ -79,10 +82,7 @@ const Navigation = () => {
             {navlinks.map(({ label, link }) => (
               <li
                 key={label}
-                className={cn(
-                  "text-[0.9375rem] capitalize",
-                  opaque ? "text-primary-900" : "text-white",
-                )}
+                className={cn("text-[0.9375rem] capitalize text-white")}
               >
                 <Link href={link}>{label}</Link>
               </li>
@@ -92,11 +92,11 @@ const Navigation = () => {
           <div className="mx-auto w-fit space-x-3">
             <ButtonLink
               variant={opaque ? "secondary-outline" : "primary-outline"}
-              className="px-5 py-2.5 text-[0.9375rem]"
+              className="border-white !py-2.5 px-5 text-[0.9375rem] text-white hover:text-neutral-100"
             >
               Log in
             </ButtonLink>
-            <ButtonLink className="px-5 py-2.5 text-[0.9375rem]">
+            <ButtonLink className="!py-2.5 px-5 text-[0.9375rem]">
               Get Started
             </ButtonLink>
           </div>
