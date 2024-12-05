@@ -1,5 +1,6 @@
 "use client";
 
+import { COUNTRY_CODES } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import countryList from "react-select-country-list";
@@ -10,21 +11,6 @@ interface CountryOption {
   phoneCode: string;
   flag: string;
 }
-
-const COUNTRY_CODES: { [key: string]: string } = {
-  US: "+1",
-  GB: "+44",
-  CA: "+1",
-  AU: "+61",
-  IN: "+91",
-  NG: "+234",
-  DE: "+49",
-  FR: "+33",
-  IT: "+39",
-  ES: "+34",
-  BR: "+55",
-  // Add more as needed
-};
 
 function CustomDropdown({
   value,
