@@ -17,18 +17,7 @@ const ContactSection = () => {
     message: "",
   });
 
-  type CountryCode =
-    | "US"
-    | "GB"
-    | "CA"
-    | "AU"
-    | "IN"
-    | "DE"
-    | "FR"
-    | "IT"
-    | "ES"
-    | "NG"
-    | "BR"; // add more as needed
+  type CountryCode = string;
 
   const [status, setStatus] = useState({ type: "", message: "" });
   const [country, setCountry] = useState<CountryCode>("US");
@@ -59,12 +48,14 @@ const ContactSection = () => {
         message: formData.message,
       };
 
-      await emailjs.send(
-        "service_b6xz0u9",
-        "template_d0yfw6h",
-        templateParams,
-        "user_vKLtBLy3sWqstDKzPwIgZ",
-      );
+      console.log({ templateParams });
+
+      // await emailjs.send(
+      //   "service_b6xz0u9",
+      //   "template_d0yfw6h",
+      //   templateParams,
+      //   "user_vKLtBLy3sWqstDKzPwIgZ",
+      // );
 
       setStatus({
         type: "success",

@@ -36,34 +36,20 @@ function CustomDropdown({
     }));
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const rawValue = e.target.value.replace(/[^\d]/g, "");
-    let formattedNumber = rawValue;
-
-    if (rawValue.length > 0) {
-      formattedNumber = `(${rawValue.slice(0, 3)}`;
-      if (rawValue.length > 3) {
-        formattedNumber += `) ${rawValue.slice(3, 6)}`;
-      }
-      if (rawValue.length > 6) {
-        formattedNumber += `-${rawValue.slice(6, 10)}`;
-      }
-    }
-
-    setPhoneNumber(formattedNumber);
-    onPhoneChange(`${selectedCountry?.phoneCode || "+1"} ${formattedNumber}`);
+    const input = e.target.value;
+    setPhoneNumber(input);
+    onPhoneChange(`${selectedCountry?.phoneCode || "+1"}${input}`);
   };
 
   const handleCountryChange = (option: CountryOption | null) => {
     setSelectedCountry(option);
     if (option) {
       onChange(option.value);
-      // Preserve the phone number but update the country code
       onPhoneChange(`${option.phoneCode} ${phoneNumber}`);
     }
   };
 
   useEffect(() => {
-    // Set default country on mount
     const defaultCountry = options.find((option) => option.value === "US");
     if (defaultCountry) {
       setSelectedCountry(defaultCountry);
@@ -126,11 +112,11 @@ function CustomDropdown({
           {selectedCountry?.phoneCode || "+1"}
         </div>
         <input
-          type="tel"
+          type="number"
           value={phoneNumber}
           onChange={handlePhoneChange}
           placeholder="(000) 000-0000"
-          className="flex-1 border-none bg-transparent px-2 focus:outline-none focus:ring-0"
+          className="flex-1 border-none bg-transparent px-2 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-0"
         />
       </div>
     </div>
