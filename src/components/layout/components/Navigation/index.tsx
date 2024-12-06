@@ -109,10 +109,6 @@ export default Navigation;
 
 const navlinks = [
   {
-    label: "case studies",
-    link: "",
-  },
-  {
     label: "about us",
     link: "/about",
   },
