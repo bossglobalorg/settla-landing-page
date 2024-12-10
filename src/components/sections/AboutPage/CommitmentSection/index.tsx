@@ -1,16 +1,17 @@
 const CommitmentSection = () => {
   return (
-    <section className="bg-[#F2F5F7] px-6 py-16 lg:px-20">
-      <div className="">
-        <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">
+    <section className="full-width content-grid bg-gray-50 py-[3.75rem] lg:space-y-24 lg:py-32">
+      <header className="space-y-4 lg:space-y-6">
+        <h2 className="text-3xl font-medium text-primary-900 md:text-4xl lg:text-[3.625rem]">
           Our Commitment to You
         </h2>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="text-xl text-gray-600">
           Fast, flexible and secure international money transfers across the
           world.
         </p>
-      </div>
-      <div className="mt-12 grid gap-8 md:grid-cols-3">
+      </header>
+
+      <div className="grid gap-8 md:grid-cols-3">
         {/* Equity & Inclusion */}
         <div className="flex flex-col items-center text-center">
           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
@@ -38,7 +39,6 @@ const CommitmentSection = () => {
             to inclusion.
           </p>
         </div>
-
         {/* Clarity & Trust */}
         <div className="flex flex-col items-center text-center">
           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
@@ -65,7 +65,6 @@ const CommitmentSection = () => {
             transaction is rooted in honesty and fairness.
           </p>
         </div>
-
         {/* Reliability & Innovation */}
         <div className="flex flex-col items-center text-center">
           <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-teal-100">
