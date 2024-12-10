@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const BannerSection = () => {
   return (
-    <section className="content-grid relative flex min-h-dvh flex-col bg-[#FFF7EB] px-6 pt-[11.125rem] md:px-12 md:pt-24 lg:px-20">
-      <div className="flex grow flex-col justify-between">
+    <section className="content-grid relative min-h-dvh bg-[#FFF7EB] pt-[11.125rem] md:pt-24">
+      <div className="flex grow flex-col justify-center">
         <div className="mb-16 text-center">
           <div className="flex items-center justify-center gap-4">
             <Image
@@ -26,7 +26,7 @@ const BannerSection = () => {
           </p>
         </div>
 
-        <div className="rounded-t-[32px] bg-white">
+        <div className="rounded-t-[32px]">
           <figure className="relative mt-auto aspect-[16/9] w-full overflow-hidden rounded-[32px]">
             <Image
               src={assetLib.aboutBannerImage}
