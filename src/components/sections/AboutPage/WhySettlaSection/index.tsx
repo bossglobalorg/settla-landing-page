@@ -1,5 +1,5 @@
-import assetLib from "@/lib/assets";
 import Image from "next/image";
+import assetLib from "@/lib/assets";
 
 const WhySettlaSection = () => {
   return (
@@ -8,13 +8,12 @@ const WhySettlaSection = () => {
         {/* Left - Image */}
         <div className="relative w-full">
           <Image
-            src={assetLib.whySettlaImages} // Ensure this resolves correctly
+            src={assetLib.whySettlaImages}
             alt="Images displaying Settla locations"
             className="rounded-lg object-cover"
-            layout="responsive"
-            width={800} // Adjust based on your image size
-            height={600} // Maintain aspect ratio
-            priority // Ensures this loads quickly
+            width={800}
+            height={600}
+            priority
           />
         </div>
 
