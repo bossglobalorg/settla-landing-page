@@ -46,20 +46,20 @@ const JourneySection = () => {
   };
 
   return (
-    <section className="space-y-4 bg-gray-50 px-6 py-16 lg:px-20">
+    <section className="space-y-4 bg-gray-50 px-6 py-16 md:space-y-10 lg:px-20">
       {/* Heading */}
-      <div className="text-center">
-        <h2 className="text-2xl font-semibold leading-8 text-primary-900 md:text-4xl">
+      <header className="space-y-4 text-center md:space-y-6">
+        <h2 className="font-inter text-2xl font-semibold leading-8 text-primary-900 md:text-[3.625rem] md:font-medium md:leading-[4rem]">
           The Journey of Settla
         </h2>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mx-auto max-w-[50rem] text-lg text-gray-600">
           From our roots in this vision, we&apos;ve grown into a platform that
           empowers communities worldwide, one transaction at a time.
         </p>
-      </div>
+      </header>
 
       {/* Timeline */}
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-6 md:gap-16">
         {/* Year Navigation */}
         <div className="no-scrollbar flex w-full max-w-[calc(100dvw-3rem)] gap-3 overflow-x-auto sm:justify-center">
           {milestones.map((milestone, index) => (
@@ -78,22 +78,24 @@ const JourneySection = () => {
         </div>
 
         {/* Active Card */}
-        <div className="w-full max-w-md rounded-3xl bg-primary-900 py-6 text-center text-white shadow-lg">
-          <h3 className="text-xl font-bold text-accent-400">
+        <div className="flex min-h-80 w-full max-w-64 flex-col rounded-[2rem] bg-primary-900 py-8 text-center text-white shadow-lg md:min-h-[30rem] md:max-w-96">
+          <h3 className="text-xl font-medium text-accent-400 md:text-4xl">
             {milestones[activeIndex].year}
           </h3>
-          <p className="mt-4 text-lg">{milestones[activeIndex].description}</p>
+          <p className="mt-2 text-xs md:mt-4 md:text-lg">
+            {milestones[activeIndex].description}
+          </p>
           <Image
             src={milestones[activeIndex].image}
             alt={`Milestone ${milestones[activeIndex].year}`}
-            className="mt-6 w-full rounded-lg"
+            className="mt-auto w-full rounded-lg max-md:-mb-8 max-md:mt-6"
             width={320}
             height={290}
           />
         </div>
 
         {/* Navigation Buttons */}
-        <div className="mt-6 flex items-center justify-between space-x-4">
+        <div className="flex items-center justify-between space-x-4 md:-mt-6">
           <button
             onClick={handlePrev}
             disabled={activeIndex === 0}
