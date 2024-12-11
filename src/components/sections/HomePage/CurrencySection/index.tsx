@@ -1,6 +1,6 @@
 import Image from "next/image";
 import assetLib from "@/lib/assets";
-import { ChevronDownSVG } from "@/components/svgs";
+import { ChevronDownSVG } from "@/svgs";
 import { ButtonLink } from "@/components";
 interface CurrencyCardProps {
   flag: string;

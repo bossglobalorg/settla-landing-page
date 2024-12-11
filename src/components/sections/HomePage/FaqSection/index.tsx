@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/components";
-import { HelpCircleIconSVG } from "@/components/svgs";
+import { HelpCircleIconSVG } from "@/svgs";
 import { FaqAccordion } from "./components";
 
 const FaqSection = () => {
@@ -7,7 +7,7 @@ const FaqSection = () => {
     <section className="content-grid py-[3.75rem] lg:py-32">
       <div className="flex items-start justify-between gap-10 max-lg:flex-col">
         <header className="w-full max-w-[26rem]">
-          <h2 className="md:text-h2 mb-6 text-2xl font-semibold leading-8 text-primary-900 sm:text-4xl md:font-medium md:leading-[4rem]">
+          <h2 className="mb-6 text-2xl font-semibold leading-8 text-primary-900 sm:text-4xl md:text-h2 md:font-medium md:leading-[4rem]">
             Got Questions? <br /> We've Got Answers
           </h2>
 

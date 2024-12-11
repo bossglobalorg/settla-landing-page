@@ -6,7 +6,7 @@ import {
   SettlaWordMarkSVG,
   XIconSVG,
   YoutubeIconSVG,
-} from "@/components/svgs";
+} from "@/svgs";
 
 const Footer = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDownSVG } from "@/components/svgs";
+import { ChevronDownSVG } from "@/svgs";
 import { FAQItem } from "@/constants/faqs";
 import { cn } from "@/lib/utils";
 

@@ -3,11 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ButtonLink } from "@/components";
-import {
-  MenuBarSVG,
-  SettlaLogoSVG,
-  SettlaWordMarkSVG,
-} from "@/components/svgs";
+import { MenuBarSVG, SettlaLogoSVG, SettlaWordMarkSVG } from "@/svgs";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
