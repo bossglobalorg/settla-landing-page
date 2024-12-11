@@ -1,12 +1,13 @@
 import { features } from "@/constants/features";
 import { FeatureType } from "@/types/features";
+import Image from "next/image";
 
 const FeatureCard: React.FC<FeatureType> = ({ icon, title, description }) => {
   return (
     <div className="flex flex-col items-start font-inter">
-      <div className="mb-6 flex size-20 items-center justify-center rounded-full bg-teal-100">
-        {icon}
-      </div>
+      <figure className="relative mb-6 flex size-20 items-center justify-center rounded-full bg-teal-100">
+        <Image src={icon} fill alt={`${title} icon`} className="bg-cover" />
+      </figure>
       <h3 className="text-xl font-medium text-primary-900 lg:text-2xl lg:leading-8">
         {title}
       </h3>
