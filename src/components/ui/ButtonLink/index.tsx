@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { cva } from "class-variance-authority";
 import { ChildrenProp } from "@/types/children";
-import { ArrowRightSVG } from "@/components/svgs";
+import { ArrowRightSVG } from "@/svgs";
 import { cn } from "@/lib/utils";
 
 interface ButtonLinkProps extends ChildrenProp {

@@ -37,7 +37,7 @@
 
 "use client";
 import { FormEvent } from "react";
-import { SearchIconSVG } from "@/components/svgs";
+import { SearchIconSVG } from "@/svgs";
 import { useValueContext } from "@/provider";
 
 const SearchInput = () => {

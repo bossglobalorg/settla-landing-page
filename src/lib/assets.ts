@@ -42,6 +42,10 @@ const assetLib = {
   topic5Icon: "/svgs/topic-icon-5.svg",
   topic6Icon: "/svgs/topic-icon-6.svg",
 
+  commitment1Icon: "/svgs/commitment-icon-1.svg",
+  commitment2Icon: "/svgs/commitment-icon-2.svg",
+  commitment3Icon: "/svgs/commitment-icon-3.svg",
+
   // LOGO SVGS
   techcabalLogo: "/svgs/techcabal-logo.svg",
   techpointLogo: "/svgs/techpoint-logo.svg",
