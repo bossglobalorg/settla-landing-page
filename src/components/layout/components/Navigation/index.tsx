@@ -58,7 +58,12 @@ const Navigation = () => {
           >
             Log in
           </ButtonLink>
-          <ButtonLink className="!py-2.5 px-5 text-[0.9375rem]">
+          <ButtonLink
+            className="!py-2.5 px-5 text-[0.9375rem]"
+            onClick={() =>
+              (window.location.href = "https://zfrmz.com/zYd6IRy1CINLvIgGPiTZ")
+            }
+          >
             Get Started
           </ButtonLink>
         </div>
