@@ -1,140 +1,230 @@
-import Image from "next/image";
-import assetLib from "@/lib/assets";
+"use client";
+
+import React, { useState } from "react";
+import Select from "react-select";
+import {
+  BaseCurrencyType,
+  Currency,
+  CurrencyCardProps,
+  CurrencySectionProps,
+  Feature,
+  CurrencyOption,
+} from "@/types/rates";
 import { ChevronDownSVG } from "@/svgs";
-import { ButtonLink } from "@/components";
-interface CurrencyCardProps {
-  flag: string;
-  symbol: string;
-  currency: string;
-  exchangeRate: number;
-}
+import assetLib from "@/lib/assets";
 
 const CurrencyCard: React.FC<CurrencyCardProps> = ({
   flag,
   symbol,
   currency,
   exchangeRate,
+  showRate = true,
 }) => {
   return (
-    <div
-      key={symbol}
-      className="flex w-full max-w-[32rem] items-center justify-start gap-5 rounded-2xl bg-white px-4 py-5 text-gray-600 sm:px-6 sm:py-7"
-    >
-      <figure className="relative size-8 overflow-hidden rounded-full bg-gray-50 sm:size-14">
-        <Image src={flag} alt={currency} fill />
-      </figure>
-
-      <div>
-        <p className="text-base font-medium leading-8 text-primary-900 sm:text-xl md:text-2xl">
-          {symbol}
-        </p>
-        <p className="max-md:text-sm">{currency}</p>
+    <div className="flex w-full items-center justify-between gap-4 rounded-xl bg-white p-4">
+      <div className="flex items-center gap-3">
+        <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-gray-50 sm:h-10 sm:w-10">
+          <img
+            src={flag}
+            alt={currency}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div>
+          <div className="flex items-center gap-2">
+            <p className="text-base font-medium text-gray-900 sm:text-lg">
+              {symbol}
+            </p>
+            {symbol === "CAD" && (
+              <span className="rounded bg-yellow-100 px-2 py-0.5 text-xs text-yellow-800">
+                Primary
+              </span>
+            )}
+          </div>
+          <p className="text-sm text-gray-500">{currency}</p>
+          <p className="text-xs text-gray-400">(1 USD → {symbol})</p>
+        </div>
       </div>
-
-      <p className="ml-auto max-sm:text-sm">
-        {exchangeRate} {symbol}
-      </p>
+      {showRate && (
+        <div className="flex items-center gap-2">
+          <p className="text-base font-medium text-gray-900">
+            {exchangeRate} {symbol}
+          </p>
+          <div className="flex items-center text-emerald-500">
+            <ChevronDownSVG className="h-4 w-4" />
+            <span className="text-xs">10.5%</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-const CurrencySection = () => {
-  const list = [
-    "One account, multiple currencies",
-    "Regulated & secure",
-    "1 business day for bank withdrawals",
+const CurrencySection: React.FC<CurrencySectionProps> = ({ className }) => {
+  const [baseCurrency, setBaseCurrency] = useState<BaseCurrencyType>("USD");
+
+  const currencyOptions: CurrencyOption[] = [
+    { value: "USD", label: "USD" },
+    { value: "EUR", label: "EUR" },
+    { value: "GBP", label: "GBP" },
   ];
 
+  const currencies: Currency[] = [
+    {
+      flag: assetLib.canadaFlagIcon,
+      symbol: "CAD",
+      currency: "Canadian Dollar",
+      exchangeRate: 1.5,
+    },
+    {
+      flag: assetLib.europeFlagIcon,
+      symbol: "EUR",
+      currency: "Euro",
+      exchangeRate: 1.2,
+    },
+    {
+      flag: assetLib.ukFlagIcon,
+      symbol: "GBP",
+      currency: "Great Britain Pound",
+      exchangeRate: 0.9,
+    },
+    {
+      flag: assetLib.nigeriaFlagIcon,
+      symbol: "NGN",
+      currency: "Nigerian Naira",
+      exchangeRate: 1675,
+    },
+    {
+      flag: assetLib.saFlagIcon,
+      symbol: "ZAR",
+      currency: "South African Rand",
+      exchangeRate: 320,
+    },
+  ];
+
+  const features: Feature[] = [
+    { id: "1", text: "One account, multiple currencies" },
+    { id: "2", text: "Regulated & secure" },
+    { id: "3", text: "1 business day for bank withdrawals" },
+  ];
+
+  const handleCurrencyChange = (option: CurrencyOption | null): void => {
+    if (option) {
+      setBaseCurrency(option.value);
+    }
+  };
+
+  const customStyles = {
+    control: (base: any) => ({
+      ...base,
+      height: "44px",
+      minHeight: "44px",
+      borderRadius: "0.5rem",
+      border: "1px solid #E2E8F0",
+      boxShadow: "none",
+      "&:hover": {
+        border: "1px solid #CBD5E0",
+      },
+    }),
+    option: (base: any, state: { isSelected: boolean }) => ({
+      ...base,
+      backgroundColor: state.isSelected ? "#F7FAFC" : "white",
+      color: "#2D3748",
+      "&:hover": {
+        backgroundColor: "#EDF2F7",
+      },
+    }),
+    menu: (base: any) => ({
+      ...base,
+      borderRadius: "0.5rem",
+      boxShadow:
+        "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    }),
+  };
+
   return (
-    <section className="content-grid py-[3.75rem] md:py-32">
-      <div className="flex items-center justify-between gap-20 max-lg:flex-col">
-        <div className="w-full max-w-[30rem]">
-          <div className="mb-6 flex items-center justify-start gap-4 md:mb-10">
-            <p className="text-sm leading-7 text-gray-600 md:text-lg">
-              Base currency:
-            </p>
-
-            <div className="flex items-center justify-start gap-2.5 rounded-[3rem] bg-gray-100 p-1.5">
-              <figure className="relative size-6 rounded-full bg-gray-50 sm:size-7">
-                <Image src={assetLib.usFlagIcon} alt="US flag Icon" fill />
-              </figure>
-              <p className="mr-2.5 font-semibold leading-6 text-primary-900 max-sm:text-sm">
-                USD
-              </p>
-              <ChevronDownSVG />
-            </div>
-          </div>
-
-          <h2 className="mb-6 text-2xl font-semibold leading-8 text-primary-900 max-sm:max-w-[18rem] sm:text-4xl md:text-[3.625rem] md:font-medium md:leading-[4rem]">
+    <section className={`container mx-auto px-4 py-16 ${className || ""}`}>
+      <div className="flex flex-col items-start gap-12 lg:flex-row lg:items-center lg:gap-20">
+        <div className="w-full max-w-xl">
+          <h2 className="mb-6 text-3xl font-semibold text-gray-900 sm:text-4xl md:text-5xl">
             Settle suppliers in any currency
           </h2>
 
-          <div className="mb-6 space-y-6 leading-7 text-gray-600 sm:mb-10 sm:text-lg">
+          <div className="mb-8 space-y-4 text-gray-600">
             <p>
               Hold over 35 currencies and exchange to the currency you need,
               when you need it.
             </p>
-
             <p>
               Expand to new markets with ease. No more barriers to paying
               partners, vendors, or suppliers around the globe.
             </p>
-
-            <ul className="space-y-5">
-              {list.map((item) => (
-                <li key={item} className="flex items-start justify-start gap-3">
-                  <figure className="relative size-7 rounded-full bg-accent-400">
-                    <Image src={assetLib.checkIcon} alt="check icon" fill />
-                  </figure>
-                  <p>{item}</p>
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <ButtonLink link="/">Learn more</ButtonLink>
+          <ul className="mb-8 space-y-4">
+            {features.map((feature) => (
+              <li key={feature.id} className="flex items-center gap-3">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-yellow-100">
+                  <svg
+                    className="h-4 w-4 text-yellow-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span>{feature.text}</span>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            className="rounded-full bg-gray-900 px-6 py-3 text-white hover:bg-gray-800"
+            type="button"
+          >
+            Learn more
+          </button>
         </div>
 
-        <div className="flex w-full max-w-[40rem] flex-col items-center justify-center gap-4 rounded-2xl bg-gray-50 p-4 sm:p-6 md:gap-6 md:p-10 lg:rounded-[4rem] lg:p-16">
-          {currencies.map((currency) => (
-            <CurrencyCard key={currency.symbol} {...currency} />
-          ))}
+        <div className="w-full max-w-2xl rounded-3xl bg-gray-50 p-6">
+          <div className="space-y-6">
+            <div>
+              <h3 className="mb-4 text-xl font-semibold text-gray-900">
+                Today's Rates
+              </h3>
+              <div className="mb-6">
+                <p className="mb-2 text-sm text-gray-600">Base currency</p>
+                <Select
+                  value={currencyOptions.find(
+                    (option) => option.value === baseCurrency,
+                  )}
+                  onChange={handleCurrencyChange}
+                  options={currencyOptions}
+                  styles={customStyles}
+                  className="react-select-container"
+                  classNamePrefix="react-select"
+                  isSearchable={false}
+                />
+              </div>
+              <p className="mb-4 text-sm text-gray-600">List of currencies</p>
+            </div>
+
+            <div className="space-y-3">
+              {currencies.map((currency) => (
+                <CurrencyCard key={currency.symbol} {...currency} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-export default CurrencySection;
 
-const currencies = [
-  {
-    flag: assetLib.canadaFlagIcon,
-    symbol: "CAD",
-    currency: "Canadian Dollar",
-    exchangeRate: 1.5,
-  },
-  {
-    flag: assetLib.europeFlagIcon,
-    symbol: "EUR",
-    currency: "Euro",
-    exchangeRate: 1.2,
-  },
-  {
-    flag: assetLib.ukFlagIcon,
-    symbol: "GBP",
-    currency: "Great Britain Pound",
-    exchangeRate: 0.9,
-  },
-  {
-    flag: assetLib.nigeriaFlagIcon,
-    symbol: "NGN",
-    currency: "Nigerian Naira",
-    exchangeRate: 1675,
-  },
-  {
-    flag: assetLib.saFlagIcon,
-    symbol: "ZAR",
-    currency: "South African Rand",
-    exchangeRate: 320,
-  },
-];
+export default CurrencySection;
