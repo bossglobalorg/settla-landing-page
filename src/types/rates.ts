@@ -8,8 +8,11 @@ export interface Currency {
   exchangeRate: number;
 }
 
+export type BaseCurrencyType = "USD" | "EUR" | "GBP";
+
 export interface CurrencyCardProps extends Currency {
   showRate?: boolean;
+  baseCurrency: BaseCurrencyType; // Add this line
 }
 
 export interface Feature {
@@ -22,8 +25,6 @@ export interface SelectOption {
   label: string;
 }
 
-export type BaseCurrencyType = "USD" | "EUR" | "GBP";
-
 export interface CurrencySectionProps {
   className?: string;
   children?: ReactNode;
@@ -32,4 +33,13 @@ export interface CurrencySectionProps {
 export interface CurrencyOption {
   value: BaseCurrencyType;
   label: string;
+}
+
+export interface RatesResponse {
+  data: {
+    [key: string]: number;
+  };
+  message: string;
+  meta: null;
+  status: string;
 }

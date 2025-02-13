@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import {
   BaseCurrencyType,
@@ -13,12 +13,27 @@ import {
 import { ChevronDownSVG } from "@/svgs";
 import assetLib from "@/lib/assets";
 
+// API Types
+interface RatesResponse {
+  data: {
+    [key: string]: number;
+  };
+  message: string;
+  meta: null;
+  status: string;
+}
+
+interface ExchangeRates {
+  [key: string]: number;
+}
+
 const CurrencyCard: React.FC<CurrencyCardProps> = ({
   flag,
   symbol,
   currency,
   exchangeRate,
   showRate = true,
+  baseCurrency,
 }) => {
   return (
     <div className="flex w-full items-center justify-between gap-4 rounded-xl bg-white p-4">
@@ -42,13 +57,15 @@ const CurrencyCard: React.FC<CurrencyCardProps> = ({
             )}
           </div>
           <p className="text-sm text-gray-500">{currency}</p>
-          <p className="text-xs text-gray-400">(1 USD → {symbol})</p>
+          <p className="text-xs text-gray-400">
+            (1 {baseCurrency} → {symbol})
+          </p>
         </div>
       </div>
       {showRate && (
         <div className="flex items-center gap-2">
           <p className="text-base font-medium text-gray-900">
-            {exchangeRate} {symbol}
+            {exchangeRate.toFixed(2)} {symbol}
           </p>
           <div className="flex items-center text-emerald-500">
             <ChevronDownSVG className="h-4 w-4" />
@@ -62,6 +79,8 @@ const CurrencyCard: React.FC<CurrencyCardProps> = ({
 
 const CurrencySection: React.FC<CurrencySectionProps> = ({ className }) => {
   const [baseCurrency, setBaseCurrency] = useState<BaseCurrencyType>("USD");
+  const [rates, setRates] = useState<ExchangeRates>({});
+  const [loading, setLoading] = useState(true);
 
   const currencyOptions: CurrencyOption[] = [
     { value: "USD", label: "USD" },
@@ -69,38 +88,51 @@ const CurrencySection: React.FC<CurrencySectionProps> = ({ className }) => {
     { value: "GBP", label: "GBP" },
   ];
 
-  const currencies: Currency[] = [
-    {
-      flag: assetLib.canadaFlagIcon,
-      symbol: "CAD",
-      currency: "Canadian Dollar",
-      exchangeRate: 1.5,
-    },
-    {
-      flag: assetLib.europeFlagIcon,
-      symbol: "EUR",
-      currency: "Euro",
-      exchangeRate: 1.2,
-    },
-    {
-      flag: assetLib.ukFlagIcon,
-      symbol: "GBP",
-      currency: "Great Britain Pound",
-      exchangeRate: 0.9,
-    },
-    {
-      flag: assetLib.nigeriaFlagIcon,
-      symbol: "NGN",
-      currency: "Nigerian Naira",
-      exchangeRate: 1675,
-    },
-    {
-      flag: assetLib.saFlagIcon,
-      symbol: "ZAR",
-      currency: "South African Rand",
-      exchangeRate: 320,
-    },
-  ];
+  const currencyInfo = {
+    CAD: { flag: assetLib.canadaFlagIcon, name: "Canadian Dollar" },
+    EUR: { flag: assetLib.europeFlagIcon, name: "Euro" },
+    GBP: { flag: assetLib.ukFlagIcon, name: "Great Britain Pound" },
+    NGN: { flag: assetLib.nigeriaFlagIcon, name: "Nigerian Naira" },
+    ZAR: { flag: assetLib.saFlagIcon, name: "South African Rand" },
+  };
+
+  useEffect(() => {
+    const fetchRates = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("https://api.useoval.com/rate");
+        const data: RatesResponse = await response.json();
+
+        if (data.status === "success") {
+          setRates(data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching rates:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRates();
+    // Fetch rates every minute
+    const interval = setInterval(fetchRates, 60000);
+
+    return () => clearInterval(interval);
+  }, [baseCurrency]);
+
+  const getRateForCurrency = (symbol: string): number => {
+    const key = `${baseCurrency}-${symbol}`;
+    return rates[key] || 0;
+  };
+
+  const currencies: Currency[] = Object.entries(currencyInfo).map(
+    ([symbol, info]) => ({
+      flag: info.flag,
+      symbol,
+      currency: info.name,
+      exchangeRate: getRateForCurrency(symbol),
+    }),
+  );
 
   const features: Feature[] = [
     { id: "1", text: "One account, multiple currencies" },
@@ -216,9 +248,17 @@ const CurrencySection: React.FC<CurrencySectionProps> = ({ className }) => {
             </div>
 
             <div className="space-y-3">
-              {currencies.map((currency) => (
-                <CurrencyCard key={currency.symbol} {...currency} />
-              ))}
+              {loading ? (
+                <div className="py-4 text-center">Loading rates...</div>
+              ) : (
+                currencies.map((currency) => (
+                  <CurrencyCard
+                    key={currency.symbol}
+                    {...currency}
+                    baseCurrency={baseCurrency}
+                  />
+                ))
+              )}
             </div>
           </div>
         </div>
